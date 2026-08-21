@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Solar Energy Management Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<style>
+:root{--nav:#122b23;--nav2:#1b3b31;--green:#18a566;--lime:#c7e58b;--bg:#f3f6f5;--card:#fff;--ink:#17251f;--muted:#74827c;--line:#e1e9e5;--shadow:0 7px 24px #16372b12}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif}.app{min-height:100vh}.side{position:fixed;left:0;top:0;bottom:0;width:250px;background:var(--nav);color:#d9e6e1;overflow:auto;z-index:10}.brand{height:66px;padding:0 18px;display:flex;align-items:center;font-weight:900;font-size:17px;background:#0d211c}.mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#22aa6c,#c7e58b);display:grid;place-items:center;color:#113228;margin-right:10px}.profile{padding:16px;border-bottom:1px solid #29453b;display:flex;gap:10px;align-items:center}.avatar{width:40px;height:40px;border-radius:50%;background:#31564b;display:grid;place-items:center;font-weight:900;color:#fff}.profile b{display:block;font-size:11px}.profile span{font-size:9px;color:#8fa89e}.sideSearch{margin:13px}.sideSearch input{width:100%;height:35px;background:#203d34;border:0;border-radius:8px;padding:0 10px;color:#fff}.sideSearch input::placeholder{color:#91a9a0}.navTitle{font-size:9px;letter-spacing:1px;color:#77938a;padding:0 17px 7px;text-transform:uppercase;font-weight:900}.nav a{display:flex;gap:11px;align-items:center;padding:10px 17px;color:#cbd9d4;text-decoration:none;font-size:11px;border-left:3px solid transparent;cursor:pointer}.nav a:hover,.nav a.active{background:#1e4035;color:#fff;border-left-color:#45bc7b}.nav i{font-style:normal;width:18px;text-align:center;font-size:14px}.main{margin-left:250px}.top{height:66px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 23px;position:sticky;top:0;z-index:8}.crumb b{font-size:16px;margin-right:8px}.crumb span{font-size:10px;color:var(--muted)}.tools{display:flex;gap:7px;align-items:center}.btn{height:34px;border:0;border-radius:8px;padding:0 11px;font-size:10px;font-weight:800;cursor:pointer}.dark{background:var(--nav);color:#fff}.light{background:#edf3f0;color:var(--ink)}.status{font-size:9px;color:var(--muted);margin-right:4px}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#aaa;margin-right:5px}.live{background:#25ad6c}.content{padding:20px 23px 32px;max-width:1550px;margin:auto}h1{font-size:23px;margin:0}.subtitle{font-size:10px;color:var(--muted);margin:4px 0 15px}.filters{background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);padding:12px;display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:15px}label{font-size:8px;color:var(--muted);text-transform:uppercase;font-weight:900;letter-spacing:.6px;display:block;margin-bottom:4px}select,input{width:100%;height:35px;border:1px solid var(--line);border-radius:8px;background:#fbfdfc;padding:0 8px;font-size:10px;color:var(--ink);outline:0}.filterBtns{display:flex;gap:6px;align-items:end}.filterBtns .btn{flex:1}.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:15px}.kpi{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px;box-shadow:var(--shadow)}.kpi label{margin:0}.kpi strong{font-size:23px;display:block;margin-top:6px}.kpi small{font-size:8px;color:var(--muted)}.grid2{display:grid;grid-template-columns:1.5fr .9fr;gap:14px;margin-bottom:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}.card{background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);padding:14px;min-width:0}.head{display:flex;justify-content:space-between;margin-bottom:9px}.title{font-size:12px;font-weight:900}.desc{font-size:8px;color:var(--muted);margin-top:3px}.pill{font-size:8px;background:#edf7f1;color:#18764d;border-radius:20px;padding:4px 7px;font-weight:900}.chart{height:275px}.smallchart{height:225px}.hero{background:linear-gradient(135deg,#12382d,#1b7650);color:#fff;border-radius:13px;padding:18px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}.hero h2{font-size:20px;margin:0}.hero p{font-size:9px;color:#cfe7dd;max-width:650px;line-height:1.5;margin:5px 0 0}.heroVal{font-size:28px;font-weight:900;text-align:right}.heroVal small{display:block;font-size:8px;color:#cfe7dd}.table{overflow:auto;max-height:440px;border:1px solid var(--line);border-radius:9px}table{border-collapse:collapse;width:100%;font-size:9px}th,td{padding:8px;border-bottom:1px solid var(--line);white-space:nowrap;text-align:right}th:first-child,td:first-child{text-align:left}th{position:sticky;top:0;background:#f7faf8;color:#6e7d76;font-size:8px;text-transform:uppercase;z-index:2}.miniGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.mini{border:1px solid var(--line);border-radius:9px;padding:10px;background:#fbfdfc}.mini b{font-size:10px}.mini strong{display:block;font-size:16px;margin-top:5px}.mini span{font-size:8px;color:var(--muted)}.empty{text-align:center;padding:25px;color:var(--muted)}.foot{text-align:right;font-size:8px;color:var(--muted);padding-top:12px}
+@media(max-width:1150px){.filters{grid-template-columns:repeat(3,1fr)}.kpis{grid-template-columns:repeat(3,1fr)}.grid2,.grid3{grid-template-columns:1fr 1fr}}@media(max-width:800px){.side{width:68px}.brand span,.profile div:not(.avatar),.sideSearch,.navTitle,.nav span{display:none}.brand{justify-content:center}.profile{justify-content:center}.nav a{justify-content:center;padding:12px 0}.main{margin-left:68px}.grid2,.grid3{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}}@media(max-width:520px){.filters,.kpis{grid-template-columns:1fr}.content{padding:14px}.top{padding:0 12px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+ <div class="brand"><div class="mark">☀</div><span>Solar Control</span></div>
+ <div class="profile"><div class="avatar">GG</div><div><b>Solar Management</b><span>Energy Performance</span></div></div>
+ <div class="sideSearch"><input placeholder="Cari menu..." oninput="menuSearch(this.value)"></div>
+ <div class="navTitle">Main Navigation</div><nav class="nav" id="nav"></nav>
+</aside>
+<main class="main">
+ <header class="top"><div class="crumb"><b id="crumb">Dashboard</b><span> / Control panel</span></div><div class="tools"><span class="status"><i class="dot" id="dot"></i><span id="status">Spreadsheet preview</span></span><button class="btn light" onclick="window.print()">Print</button><button class="btn dark" onclick="refreshLive()">↻ Refresh</button></div></header>
+ <section class="content">
+  <h1 id="title">Dashboard Utama</h1><div class="subtitle" id="subtitle">Overview seluruh perusahaan, proses, bagian dan aktivitas</div>
+  <section class="filters">
+   <div><label>Tahun</label><select id="year"></select></div><div><label>Bulan</label><select id="month"></select></div><div><label>Perusahaan</label><select id="company"></select></div><div><label>Yield / Process</label><select id="yield"></select></div><div><label>Bagian / Aktivitas</label><select id="part"></select></div><div><label>Pencarian</label><input id="search" placeholder="Cari bagian, aktivitas, PG, BD..."></div>
+   <div class="filterBtns"><button class="btn dark" onclick="render()">Terapkan</button><button class="btn light" onclick="resetAll()">Reset</button></div>
+  </section>
+  <div id="view"></div>
+  <div class="foot">Source: Google Spreadsheet • Drill-down: Tahun → Bulan → Perusahaan → Process → Bagian → Aktivitas</div>
+ </section>
+</main>
+</div>
+<script>
+const DATA=[],COLS=[],API_URL="https://script.google.com/macros/s/AKfycbwOyj1ljmwQxVtAztMOG3If_RCYznQ2PpuhfY-ba--Vaupl3N99uyIeHfvlfrrVLlrq/exec";
+const tabs=[
+ ["overview","▦","Overview"],["process","◈","Process Pine"],["banana","●","Banana Farming"],["compost","♻","Compost"],["goff","◌","GOFF"],["fresh","◇","Fresh Pine"],["power","⚡","Power Plant"],["dairy","◍","Dairy"],["pineapple","◆","Produksi Nanas"],["detail","☷","Data Detail"]
+];
+let active="overview",charts={};
+const $=x=>document.getElementById(x),N=x=>Number.isFinite(Number(x))?Number(x):0,F=x=>new Intl.NumberFormat("id-ID",{maximumFractionDigits:0}).format(N(x)),E=x=>String(x??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+const uniq=a=>[...new Set(a.filter(x=>x!==null&&x!==undefined&&String(x)!=="").map(String))].sort((a,b)=>a.localeCompare(b,"id",{numeric:true}));
+const YM=r=>String(r["Bulan"]??"").slice(0,7),Y=r=>String(r["Tahun"]??""),ML=x=>{let[a,b]=x.split("-");return new Date(+a,+b-1,1).toLocaleDateString("id-ID",{month:"short",year:"numeric"})};
+function nav(){ $("nav").innerHTML=tabs.map(t=>`<a class="${t[0]==active?"active":""}" onclick="tab('${t[0]}')"><i>${t[1]}</i><span>${t[2]}</span></a>`).join("") }
+function options(id,vals,month=false){let a=uniq(vals);$(id).innerHTML='<option value="ALL">Semua</option>'+a.map(x=>`<option value="${E(x)}">${month?ML(x):E(x)}</option>`).join("")}
+function populate(){options("year",DATA.map(Y));options("month",DATA.map(YM).filter(Boolean),true);options("company",DATA.map(r=>r.Perusahaan));options("yield",DATA.map(r=>r.Yield).concat(["Process Pine","Factory","Plantation","Umum","Farming Service","Riset"]));let p=[];["Bagian Process Pine","Bagian Factory Process Pine","Bagian Plantation Process Pine","BD Bagian Plantation","Bagian Umum Process Pine","Bagian Farming Service","BD Bagian Farming Service","Riset per Aktivitas","Bagian Banana","Bagian Compost","Bagian GOFF","Bagian Fresh Pine","BD Bagian Fresh Pine","Bagian Power Plant","Bagian Dairy","Bagian Produksi Nanas"].forEach(c=>p.push(...DATA.map(r=>r[c])));options("part",p)}
+function rows(){let a=$("year").value,b=$("month").value,c=$("company").value,y=$("yield").value,p=$("part").value,q=$("search").value.toLowerCase().trim();return DATA.filter(r=>{let ok=(a=="ALL"||Y(r)==a)&&(b=="ALL"||YM(r)==b)&&(c=="ALL"||String(r.Perusahaan??"")==c);if(y!="ALL")ok=ok&&(String(r.Yield??"")==y||JSON.stringify(r).toLowerCase().includes(y.toLowerCase()));if(p!="ALL")ok=ok&&JSON.stringify(r).toLowerCase().includes(p.toLowerCase());if(q)ok=ok&&JSON.stringify(r).toLowerCase().includes(q);return ok})}
+function destroy(){Object.values(charts).forEach(c=>c&&c.destroy());charts={}}
+function agg(rs,key,col){let o={};rs.forEach(r=>{let k=typeof key=="function"?key(r):r[key];if(k)o[k]=(o[k]||0)+N(r[col])});return o}
+function opts(h=false){return{responsive:true,maintainAspectRatio:false,indexAxis:h?"y":"x",plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>" "+F(c.raw)}}},scales:h?{x:{grid:{color:"#edf2ef"},ticks:{callback:v=>F(v),color:"#718078"}},y:{grid:{display:false},ticks:{color:"#718078"}}}:{x:{grid:{display:false},ticks:{color:"#718078"}},y:{grid:{color:"#edf2ef"},ticks:{callback:v=>F(v),color:"#718078"}}}}}
+function line(id,o){let e=Object.entries(o).sort(),c=$(id);charts[id]=new Chart(c,{type:"line",data:{labels:e.map(x=>ML(x[0])),datasets:[{data:e.map(x=>x[1]),borderColor:"#17804f",backgroundColor:"rgba(23,128,79,.10)",fill:true,tension:.35,borderWidth:2.5,pointRadius:2}]},options:opts()})}
+function bar(id,o,n=8,h=true){let e=Object.entries(o).sort((a,b)=>b[1]-a[1]).slice(0,n);charts[id]=new Chart($(id),{type:"bar",data:{labels:e.map(x=>x[0]),datasets:[{data:e.map(x=>x[1]),backgroundColor:"#2aaa6d",borderRadius:6,barThickness:17}]},options:opts(h)})}
+function donut(id,o){let e=Object.entries(o).sort((a,b)=>b[1]-a[1]);charts[id]=new Chart($(id),{type:"doughnut",data:{labels:e.map(x=>x[0]),datasets:[{data:e.map(x=>x[1]),backgroundColor:["#17784e","#39ad73","#c2df82","#e6a33b","#4b90c7","#a45bb4","#da655c"],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:"62%",plugins:{legend:{position:"bottom",labels:{usePointStyle:true,font:{size:9}}}}}})}
+function k(t,v,s){return `<div class="kpi"><label>${t}</label><strong>${F(v)}</strong><small>${s}</small></div>`}
+function card(t,d,b){return `<div class="card"><div class="head"><div><div class="title">${t}</div><div class="desc">${d}</div></div></div>${b}</div>`}
+function table(rs,cs){return `<div class="table"><table><thead><tr>${cs.map(c=>`<th>${E(c)}</th>`).join("")}</tr></thead><tbody>${rs.length?rs.slice(0,900).map(r=>`<tr>${cs.map(c=>`<td>${typeof r[c]=="number"?F(r[c]):E(r[c])}</td>`).join("")}</tr>`).join(""):`<tr><td class="empty" colspan="${cs.length}">Tidak ada data.</td></tr>`}</tbody></table></div>`}
+function overview(rs){destroy();let total=rs.reduce((s,r)=>s+N(r["Jml Solar/Yield"]),0),cats={"Banana":rs.reduce((s,r)=>s+N(r["Total Banana"]),0),"Compost":rs.reduce((s,r)=>s+N(r["Total Compost"]),0),"GOFF":rs.reduce((s,r)=>s+N(r["Total GOFF"]),0),"Fresh Pine":rs.reduce((s,r)=>s+N(r["Total Fresh Pine"]),0),"Power Plant":rs.reduce((s,r)=>s+N(r["Total Power Plant"]),0),"Dairy":rs.reduce((s,r)=>s+N(r["Total Dairy"]),0),"Produksi Nanas":rs.reduce((s,r)=>s+N(r["Total Produksi Nanas"]),0)},months=uniq(rs.map(YM)).filter(Boolean);
+let co={"PT GGP":rs.reduce((s,r)=>s+N(r["PT GGP"]),0),"PT UJA":rs.reduce((s,r)=>s+N(r["PT UJA"]),0),"Bromelin":rs.reduce((s,r)=>s+N(r["PT Bromelin"]),0),"PT GGL":rs.reduce((s,r)=>s+N(r["PT GGL"]),0)};
+$("view").innerHTML=`<div class="kpis">${k("Total Solar / Yield",total,"Jml Solar/Yield")} ${k("Rata-rata / Bulan",months.length?total/months.length:0,"periode aktif")} ${k("Record",rs.length,"baris terfilter")} ${k("Perusahaan",uniq(rs.map(r=>r.Perusahaan)).length,"entitas")} ${k("Kategori",7,"operasional")}</div><div class="grid2">${card("Solar Trend","Total Jml Solar/Yield per bulan",'<div class="chart"><canvas id="tr"></canvas></div>')}${card("Solar per Company","Kontribusi unit / perusahaan",'<div class="chart"><canvas id="co"></canvas></div>')}</div><div class="grid3">${card("Operational Categories","Banana, Compost, GOFF, Fresh Pine, Power Plant, Dairy, Nanas",'<div class="smallchart"><canvas id="cat"></canvas></div>')}${card("Process Pine — Bagian","Factory, Plantation, FS, Umum, Riset",'<div class="smallchart"><canvas id="pine"></canvas></div>')}${card("Yield","Distribusi Yield",'<div class="smallchart"><canvas id="yd"></canvas></div>')}</div><div class="card"><div class="head"><div><div class="title">Executive Category Summary</div><div class="desc">Nilai kategori berdasarkan filter aktif</div></div></div><div class="miniGrid">${Object.entries(cats).sort((a,b)=>b[1]-a[1]).map(x=>`<div class="mini"><b>${x[0]}</b><span>Total</span><strong>${F(x[1])}</strong></div>`).join("")}</div></div>`;
+line("tr",agg(rs,YM,"Jml Solar/Yield"));bar("co",co,6,false);donut("cat",cats);bar("pine",agg(rs,"Bagian Process Pine","Jml Solar/Bagian Process Pine"),7,true);bar("yd",agg(rs,"Yield","Jml Solar/Yield"),7,true)}
+function detail(id,rs){destroy();let map={banana:["Banana Farming","Total Banana","Bagian Banana","Jml Bagian Banana"],compost:["Compost","Total Compost","Bagian Compost","Jml Bagian Compost"],goff:["GOFF","Total GOFF","Bagian GOFF","Jml Bagian GOFF"],fresh:["Fresh Pine","Total Fresh Pine","Bagian Fresh Pine","Jml Bagian Fresh Pine"],power:["Power Plant","Total Power Plant","Bagian Power Plant","Jml Bagian Power Plant"],dairy:["Dairy","Total Dairy","Bagian Dairy","Jml Bagian Dairy"],pineapple:["Produksi Nanas","Total Produksi Nanas","Bagian Produksi Nanas","Jml Bagian Produksi Nanas"]}[id];let total=rs.reduce((s,r)=>s+N(r[map[1]]),0),parts=agg(rs,map[2],map[3]);
+$("view").innerHTML=`<div class="hero"><div><h2>${map[0]}</h2><p>Dashboard detail berdasarkan data spreadsheet. Filter global tetap aktif untuk Tahun, Bulan, Perusahaan, Yield/Process dan Bagian/Aktivitas.</p></div><div class="heroVal">${F(total)}<small>${map[1]}</small></div></div><div class="kpis">${k("Total",total,map[1])}${k("Bagian",Object.keys(parts).length,"bagian terdata")}${k("Record",rs.length,"record")}${k("Bulan",uniq(rs.map(YM)).length,"periode")}${k("Perusahaan",uniq(rs.map(r=>r.Perusahaan)).length,"unik")}</div><div class="grid2">${card("Trend "+map[0],"Total per bulan",'<div class="chart"><canvas id="dt"></canvas></div>')}${card("Ranking Bagian","Aktivitas / bagian tertinggi",'<div class="chart"><canvas id="dp"></canvas></div>')}</div><div class="grid2">${card("Breakdown Bagian","Agregasi berdasarkan kolom bagian",table(Object.entries(parts).sort((a,b)=>b[1]-a[1]).map(x=>({"Bagian":x[0],"Solar":x[1]})),["Bagian","Solar"]))}${card("Activity Detail","Record aktivitas yang mendukung kategori",table(rs,["Perusahaan","Bulan","Tahun",map[2],map[3],map[1]].filter(x=>COLS.includes(x))))}</div>`;line("dt",agg(rs,YM,map[1]));bar("dp",parts,10,true)}
+function process(rs){destroy();let sec=agg(rs,"Bagian Process Pine","Jml Solar/Bagian Process Pine"),fac=agg(rs,"Bagian Factory Process Pine","Jml Solar/Bagian Factory Process Pine"),pl=agg(rs,"Bagian Plantation Process Pine","Jml Solar/Bagian BD Plantation Process Pine"),fs=agg(rs,"Bagian Farming Service","Jumlah Solar Bagian Farming Service"),re=agg(rs,"Riset per Aktivitas","Jml Solar Riset/Aktivitas"),um=agg(rs,"Bagian Umum Process Pine","Jml Solar/Bagian Umum Process Pine"),total=rs.reduce((s,r)=>s+N(r["Jml Solar/Yield"]),0);
+$("view").innerHTML=`<div class="hero"><div><h2>Process Pine</h2><p>Hierarchy lengkap: Factory → bagian; Plantation → PG → bagian/BD; Farming Service → FS → bagian/BD; Umum; Riset.</p></div><div class="heroVal">${F(total)}<small>Jml Solar/Yield</small></div></div><div class="grid3">${card("Process Pine / Bagian","Top level",'<div class="smallchart"><canvas id="ps"></canvas></div>')}${card("Factory","Bagian Factory",'<div class="smallchart"><canvas id="pf"></canvas></div>')}${card("Plantation","Bagian Plantation",'<div class="smallchart"><canvas id="pp"></canvas></div>')}</div><div class="grid3">${card("Farming Service","Bagian FS",'<div class="smallchart"><canvas id="pfs"></canvas></div>')}${card("Umum","Support",'<div class="smallchart"><canvas id="pu"></canvas></div>')}${card("Riset","Aktivitas Riset",'<div class="smallchart"><canvas id="pr"></canvas></div>')}</div><div class="card">${table(rs,["Perusahaan","Bulan","Yield","Bagian Process Pine","Bagian Factory Process Pine","PG Process Pine","Bagian Plantation Process Pine","BD Bagian Plantation","Farming Service/PG","Bagian Farming Service","BD Bagian Farming Service","Riset per Aktivitas","Jml Solar/Yield","Jml Solar/Bagian Factory Process Pine","Jml Solar/Bagian BD Plantation Process Pine","Jumlah Solar Bagian Farming Service","Jml Solar Riset/Aktivitas"].filter(x=>COLS.includes(x)))}</div>`;bar("ps",sec);bar("pf",fac);bar("pp",pl);bar("pfs",fs);bar("pu",um);bar("pr",re)}
+function detailTab(rs){destroy();let cs=["Perusahaan","Bulan","Tahun","Yield","Process Pine","Bagian Process Pine","Factory Process Pine","Bagian Factory Process Pine","Plantation Process Pine","PG Process Pine","Bagian Plantation Process Pine","BD Bagian Plantation","Umum Process Pine","Bagian Umum Process Pine","Farming Service Process Pine","Farming Service/PG","Bagian Farming Service","BD Bagian Farming Service","Riset Process Pine","Riset per Aktivitas","Banana","Bagian Banana","Compost","Bagian Compost","GOFF","Bagian GOFF","Fresh Pine","Bagian Fresh Pine","BD Bagian Fresh Pine","Power Plant","Bagian Power Plant","Dairy","Bagian Dairy","Produksi Nanas","Bagian Produksi Nanas","Jml Solar/Yield","Total Banana","Total Compost","Total GOFF","Total Fresh Pine","Total Power Plant","Total Dairy","Total Produksi Nanas"].filter(x=>COLS.includes(x));$("view").innerHTML=`<div class="card"><div class="head"><div><div class="title">Data Detail</div><div class="desc">Audit trail: proses, bagian, aktivitas dan nilai solar</div></div><span class="pill">${F(rs.length)} records</span></div>${table(rs,cs)}</div>`}
+function render(){let rs=rows();$("title").textContent=tabs.find(x=>x[0]==active)[2]=="Overview"?"Dashboard Utama":tabs.find(x=>x[0]==active)[2];$("crumb").textContent=$("title").textContent;if(active=="overview")overview(rs);else if(active=="process")process(rs);else if(active=="detail")detailTab(rs);else detail(active,rs)}
+function tab(id){active=id;nav();render()}
+function navSearch(q){document.querySelectorAll(".nav a").forEach(a=>a.style.display=a.innerText.toLowerCase().includes(q.toLowerCase())?"flex":"none")}
+function menuSearch(q){navSearch(q)}
+function resetAll(){["year","month","company","yield","part"].forEach(x=>$(x).value="ALL");$("search").value="";render()}
+function refreshLive(){
+  if(!API_URL){
+    $("status").textContent="API belum diisi";
+    return;
+  }
+  $("status").textContent="Mengambil data...";
+  $("dot").classList.remove("live");
+
+  const cb="solarDashboardCallback_"+Date.now();
+
+  window[cb]=function(payload){
+    try{
+      if(!payload || payload.ok!==true){
+        throw new Error((payload&&payload.error)||"Response Apps Script tidak valid");
+      }
+
+      const incoming=Array.isArray(payload.data)?payload.data:[];
+      DATA.length=0;
+      incoming.forEach(row=>DATA.push(row));
+
+      COLS.length=0;
+      (payload.columns||Object.keys(DATA[0]||{})).forEach(c=>COLS.push(c));
+
+      populate();
+      render();
+
+      $("status").textContent="LIVE • "+new Date().toLocaleTimeString("id-ID");
+      $("dot").classList.add("live");
+    }catch(err){
+      console.error(err);
+      $("status").textContent="Format data Google Sheet tidak valid";
+      $("view").innerHTML='<div class="card"><div class="empty"><b>Data gagal dibaca.</b><br>Pastikan Apps Script menggunakan versi JSONP yang disediakan bersama file ini.</div></div>';
+    }finally{
+      delete window[cb];
+      const old=document.getElementById(cb);
+      if(old) old.remove();
+    }
+  };
+
+  const script=document.createElement("script");
+  script.id=cb;
+  script.src=API_URL+"?callback="+encodeURIComponent(cb)+"&t="+Date.now();
+  script.async=true;
+
+  script.onerror=function(){
+    $("status").textContent="Koneksi Google Apps Script gagal";
+    $("view").innerHTML='<div class="card"><div class="empty"><b>Tidak dapat terhubung ke Google Spreadsheet.</b><br>Deploy Apps Script sebagai Web App dengan akses <b>Anyone</b>, lalu gunakan Code.gs JSONP yang saya berikan.</div></div>';
+    delete window[cb];
+    script.remove();
+  };
+
+  document.body.appendChild(script);
+}
+nav(); $("view").innerHTML="<div class=\"card\"><div class=\"empty\">Menghubungkan ke Google Spreadsheet...</div></div>"; refreshLive();
+</script>
+</body></html>
