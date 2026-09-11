@@ -2002,6 +2002,300 @@ table th:last-child,table td:last-child{min-width:190px}
 }
 </style>
 
+
+<style id="proper-reference-dashboard-v4">
+/* ============================================================
+   PROPER — REFERENCE-INSPIRED EXECUTIVE DASHBOARD
+   Visual redesign only. Existing IDs and JS contracts retained.
+   ============================================================ */
+:root{
+ --ref-navy:#08294b;--ref-navy2:#0b3961;--ref-blue:#1976d2;--ref-sky:#3aa9ef;
+ --ref-green:#08ae78;--ref-green2:#22c997;--ref-red:#f04f55;--ref-orange:#f49a19;
+ --ref-purple:#7250d8;--ref-ink:#112f48;--ref-muted:#748a9b;--ref-line:#dce8ee;
+ --ref-bg:#edf4f8;--ref-white:#fff;
+}
+body{background:var(--ref-bg)}
+.app{grid-template-columns:188px 1fr}
+.sidebar{
+ width:188px;box-sizing:border-box;position:sticky;top:0;height:100vh;
+ padding:18px 12px;background:linear-gradient(180deg,#082b4c 0%,#062744 62%,#071f38 100%);
+ border-right:0;color:#fff;box-shadow:8px 0 25px rgba(3,30,53,.12);gap:12px;
+ overflow:hidden;
+}
+.sidebar:after{
+ content:"";position:absolute;left:-35px;bottom:-50px;width:230px;height:260px;
+ background:radial-gradient(ellipse at 50% 100%,rgba(34,201,151,.18),transparent 62%);
+ pointer-events:none;
+}
+.brand{text-align:left;padding:7px 9px 15px;border-bottom:1px solid rgba(255,255,255,.10);position:relative;z-index:2}
+.proper-logo{width:40px;height:40px;margin:0 0 8px}
+.proper-logo img{width:100%;height:100%;object-fit:contain}
+.brand h2{font-size:18px;line-height:1.05;letter-spacing:-.5px;color:#fff;margin:0;text-transform:uppercase}
+.brand .sidebar-she-subtitle-final{font-size:8px;line-height:1.5;color:#9eb5c8;margin-top:7px;letter-spacing:.7px}
+.user-profile-mini{
+ position:relative;z-index:2;padding:9px;border:1px solid rgba(255,255,255,.10);
+ background:rgba(255,255,255,.06);border-radius:11px;color:#fff
+}
+.user-profile-mini img{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.55)}
+.user-profile-mini b{font-size:9px;color:#fff}.user-profile-mini small{font-size:7px;color:#9eb5c8}
+.nav-label{position:relative;z-index:2;color:#87a5bb;font-size:7px;letter-spacing:.18em;margin:4px 9px}
+.nav{position:relative;z-index:2;gap:3px}
+.nav button{
+ border:0!important;background:transparent!important;color:#b8cad8!important;
+ padding:9px 9px!important;border-radius:9px!important;font-size:9px!important;min-height:34px;
+ transition:.18s ease;box-shadow:none!important;
+}
+.nav button span:not(.chat-unread){white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav button:hover{background:rgba(255,255,255,.08)!important;color:#fff!important;transform:translateX(2px)}
+.nav button.active{
+ background:linear-gradient(90deg,#1878df,#2687ed)!important;color:#fff!important;
+ box-shadow:0 8px 17px rgba(19,118,220,.25)!important
+}
+.nav button:first-child{font-weight:900}
+.sidebar-note{
+ position:relative;z-index:2;margin-top:auto;color:#8fa9bb!important;font-size:7px!important;line-height:1.5
+}
+.sidebar-note .btn{border-color:rgba(255,255,255,.12)!important;background:rgba(255,255,255,.06)!important;color:#c9d7e1!important}
+
+.main{padding:0;max-width:none;background:#eef5f8;overflow:hidden}
+.page.active{animation:none}
+#dashboard.portal-dashboard{
+ min-height:100vh;padding:0 18px 30px;background:
+ radial-gradient(circle at 87% 7%,rgba(48,169,239,.08),transparent 23%),
+ linear-gradient(180deg,#f5f9fb,#edf4f7)!important;
+}
+#dashboard .px-dashboard-shell{max-width:1500px;margin:0 auto;padding-top:14px}
+#dashboard .px-hero{
+ position:relative;min-height:112px;border-radius:0 0 17px 17px;overflow:hidden;
+ padding:20px 270px 18px 18px;
+ background:
+  linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.94) 48%,rgba(244,250,253,.48) 100%),
+  linear-gradient(180deg,#dceff9,#f7fbfd);
+ border:1px solid #dbe8ee;border-top:0;box-shadow:0 9px 25px rgba(15,61,90,.08)
+}
+#dashboard .px-hero:before{
+ content:"";position:absolute;left:0;top:0;width:100%;height:4px;
+ background:linear-gradient(90deg,#0c3760,#1888dd,#10b77f,#3ca7df)
+}
+#dashboard .px-hero-copy{position:relative;z-index:4}
+#dashboard .px-kicker{font-size:9px;letter-spacing:.29em;color:#0c5c91;font-weight:950;margin-bottom:5px}
+#dashboard .px-hero h1{margin:0;color:#0b2850;font-size:37px;line-height:1.02;letter-spacing:-1.7px;font-weight:950}
+#dashboard .px-hero p{margin:8px 0 0;color:#5f788c;font-size:10px}
+#dashboard .px-hero-art{position:absolute;right:0;top:0;width:55%;height:100%;overflow:hidden;opacity:.72}
+#dashboard .px-hero-art:before{
+ content:"";position:absolute;inset:0;
+ background:
+  radial-gradient(circle at 80% 18%,rgba(255,255,255,.95),transparent 22%),
+  linear-gradient(180deg,rgba(183,222,241,.4),rgba(255,255,255,0));
+}
+#dashboard .px-skyline{position:absolute;right:0;bottom:23px;width:100%;height:62px;display:flex;align-items:flex-end;justify-content:flex-end;gap:4px}
+#dashboard .px-skyline i{display:block;width:7%;max-width:55px;background:linear-gradient(180deg,#a4bac7,#6c8999);opacity:.55;border-radius:2px 2px 0 0}
+#dashboard .px-skyline i:nth-child(1){height:43%}.px-skyline i:nth-child(2){height:73%}.px-skyline i:nth-child(3){height:54%}
+#dashboard .px-skyline i:nth-child(4){height:90%}.px-skyline i:nth-child(5){height:65%}
+#dashboard .px-tank{position:absolute;border:2px solid #7295a8;background:rgba(208,230,240,.55);bottom:24px;border-radius:8px 8px 4px 4px;box-shadow:inset 0 0 0 7px rgba(255,255,255,.18)}
+#dashboard .px-tank.t1{right:31%;width:55px;height:64px}.px-tank.t2{right:23%;width:39px;height:48px}
+#dashboard .px-stack{position:absolute;right:12%;bottom:24px;width:16px;height:82px;background:linear-gradient(90deg,#839dab,#d8e7ed,#718996);border-radius:3px}
+#dashboard .px-stack:after{content:"";position:absolute;left:-4px;top:-7px;width:24px;height:8px;border-radius:50%;background:#9eb5c0;box-shadow:0 -8px 0 -2px rgba(136,165,178,.3)}
+#dashboard .px-leaf{position:absolute;color:#169b79;font-size:64px;transform:rotate(-25deg);opacity:.5}
+#dashboard .px-leaf.l1{right:2%;top:-8px}.px-leaf.l2{right:9%;top:13px;font-size:43px;transform:rotate(20deg)}
+#dashboard .px-clock{
+ position:absolute;z-index:5;right:15px;top:15px;background:rgba(255,255,255,.92);
+ border:1px solid #dce8ee;border-radius:11px;padding:8px 12px;min-width:116px;
+ box-shadow:0 7px 18px rgba(13,56,84,.08);color:#0c3760
+}
+#dashboard .px-clock span{font-size:16px;margin-right:7px;vertical-align:middle}
+#dashboard .px-clock b{font-size:8px}.px-clock small{display:block;margin:3px 0 0 23px;color:#728697;font-size:7px}
+
+#dashboard .px-filterbar{
+ display:flex;justify-content:space-between;align-items:center;gap:15px;
+ padding:12px 2px 10px
+}
+#dashboard .px-filter-title span{display:block;color:#0a9870;font-size:7px;letter-spacing:.2em;font-weight:950}
+#dashboard .px-filter-title b{display:block;color:#0c2e49;font-size:13px;margin-top:3px}
+#dashboard .portal-filter-mini{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+#dashboard .portal-filter-mini select,#dashboard .portal-filter-mini button{
+ height:33px;border:1px solid #d4e2e9;border-radius:9px;background:#fff;color:#28495d;
+ font-size:8px;font-weight:800;padding:0 10px;box-shadow:0 4px 10px rgba(10,50,75,.035)
+}
+#dashboard .portal-filter-mini select:focus{outline:2px solid rgba(25,118,210,.10);border-color:#9ec7e4}
+#dashboard .portal-filter-mini button{cursor:pointer;color:#1476bf}
+#dashboard .portal-filter-mini .px-refresh{
+ width:33px;padding:0;border-radius:50%;color:#fff;background:#0b77bf;border-color:#0b77bf;font-size:15px;
+ transition:.25s ease
+}
+#dashboard .portal-filter-mini .px-refresh:hover{transform:rotate(180deg);box-shadow:0 6px 15px rgba(11,119,191,.25)}
+
+#dashboard .dash-kpis{
+ display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px;margin:0;padding:0;
+ border:0;background:transparent
+}
+#dashboard .dash-kpis .exec-kpi{
+ position:relative;min-height:102px;padding:14px 13px 11px;border:1px solid #dce8ee!important;
+ border-radius:13px;background:rgba(255,255,255,.98);box-shadow:0 7px 18px rgba(12,53,78,.065);
+ overflow:hidden;cursor:pointer;transition:.22s ease
+}
+#dashboard .dash-kpis .exec-kpi:hover{transform:translateY(-4px);box-shadow:0 15px 28px rgba(12,53,78,.11);border-color:#b7d9e9!important}
+#dashboard .dash-kpis .exec-kpi:before{
+ content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#2d9ce7
+}
+#dashboard .dash-kpis .exec-kpi:after{
+ position:absolute;right:-18px;top:-18px;width:67px;height:67px;border-radius:50%;content:"";
+ background:rgba(35,143,220,.09)
+}
+#dashboard .dash-kpis .exec-kpi:nth-child(2):before{background:#2cb9dd}.dash-kpis .exec-kpi:nth-child(3):before{background:#16b77d}
+#dashboard .dash-kpis .exec-kpi:nth-child(4):before{background:#0cb982}.dash-kpis .exec-kpi:nth-child(5):before{background:#f05a5f}
+#dashboard .dash-kpis .exec-kpi:nth-child(6):before{background:#7259cf}
+#dashboard .dash-kpis .exec-kpi span{font-size:7px;letter-spacing:.1em;color:#6e8392;font-weight:950}
+#dashboard .dash-kpis .exec-kpi strong{font-size:26px;line-height:1;color:#0c3150;letter-spacing:-1px;margin:8px 0 4px}
+#dashboard .dash-kpis .exec-kpi small{font-size:7px;color:#8295a1}
+#dashboard .dash-kpis .exec-kpi:nth-child(1) strong:before{content:"⌖";font-size:13px;margin-right:5px;color:#237fc7}
+#dashboard .dash-kpis .exec-kpi:nth-child(2) strong:before{content:"▣";font-size:12px;margin-right:5px;color:#22a8d0}
+#dashboard .dash-kpis .exec-kpi:nth-child(3) strong:before{content:"♛";font-size:13px;margin-right:5px;color:#0da976}
+#dashboard .dash-kpis .exec-kpi:nth-child(4) strong:before{content:"✓";font-size:13px;margin-right:5px;color:#0da976}
+#dashboard .dash-kpis .exec-kpi:nth-child(5) strong:before{content:"×";font-size:15px;margin-right:5px;color:#ee5056}
+#dashboard .dash-kpis .exec-kpi:nth-child(6) strong:before{content:"◇";font-size:13px;margin-right:5px;color:#6651c5}
+
+#dashboard .px-grid{display:grid;gap:10px;margin-top:10px}
+#dashboard .px-top-grid{grid-template-columns:minmax(0,1.55fr) minmax(285px,.85fr) minmax(285px,.9fr)}
+#dashboard .px-bottom-grid{grid-template-columns:minmax(270px,.8fr) minmax(380px,1.25fr) minmax(300px,1fr)}
+#dashboard .px-insight-grid{grid-template-columns:minmax(270px,.9fr) minmax(270px,.9fr) minmax(420px,1.35fr)}
+#dashboard .px-card{
+ border:1px solid #dbe7ed!important;border-radius:15px!important;background:rgba(255,255,255,.97)!important;
+ box-shadow:0 8px 21px rgba(12,54,80,.055)!important;padding:13px!important;overflow:hidden
+}
+#dashboard .px-card:hover{box-shadow:0 13px 28px rgba(12,54,80,.085)!important}
+#dashboard .portal-panel-head{margin-bottom:8px;position:relative}
+#dashboard .portal-panel-head span{display:block;color:#079b70;font-size:7px;letter-spacing:.13em;font-weight:950}
+#dashboard .portal-panel-head h3{font-size:14px;color:#0c2f4c;margin:4px 0 2px;letter-spacing:-.25px}
+#dashboard .portal-panel-head p{font-size:7px;color:#8194a0;margin:0;line-height:1.5}
+#dashboard .px-section-icon{
+ float:left;width:27px;height:27px;margin:0 7px 5px 0;border-radius:8px;background:#e8f4ff;
+ color:#1384d4;display:grid;place-items:center;font-size:15px;font-weight:900
+}
+#dashboard .px-module-card .px-section-icon{background:#e8f7f2;color:#079c71}
+#dashboard .px-bu-card .px-section-icon{background:#eaf4ff;color:#147bc4}
+#dashboard .px-donut-card .px-section-icon{background:#e8f5ff}
+#dashboard .px-action-card .px-section-icon{background:#fff4df;color:#ed8d13}
+#dashboard .px-panel-title-row{display:flex;justify-content:space-between;gap:8px}
+#dashboard .px-panel-title-row>div{min-width:0}
+#dashboard .px-detail-btn{
+ flex:none;height:28px;padding:0 9px;border:1px solid #cfe1ed;background:#fff;color:#1878c2;border-radius:8px;
+ font-size:7px;font-weight:900;cursor:pointer;transition:.18s ease
+}
+#dashboard .px-detail-btn:hover{background:#eaf5fd;transform:translateY(-1px)}
+
+#dashboard .px-trend-card{min-height:338px}
+#dashboard .chart-head{display:flex!important;justify-content:space-between;gap:10px;align-items:flex-start}
+#dashboard .chart-toolbar{display:flex;align-items:center;gap:4px}
+#dashboard .chart-switch{height:29px;padding:0 9px;border:1px solid #d8e5eb;border-radius:8px;background:#fff;color:#516b7b;font-size:7px;font-weight:900;cursor:pointer}
+#dashboard .chart-switch.active{background:#0b3760;color:#fff;border-color:#0b3760;box-shadow:0 5px 12px rgba(11,55,96,.18)}
+#dashboard .chart-overall{height:43px;min-width:60px;padding:5px 7px;border:1px solid #cce9dd;border-radius:9px;background:#f3fbf7;text-align:right}
+#dashboard .chart-overall small{display:block;color:#759089;font-size:6px;font-weight:950}.chart-overall b{font-size:15px;color:#07805f}
+#dashboard .executive-chart-stage{
+ min-height:235px;border:0!important;border-radius:9px!important;padding:3px!important;background:
+ linear-gradient(rgba(14,77,103,.06) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(14,77,103,.045) 1px,transparent 1px),#fcfefe!important;
+ background-size:100% 25%,20% 100%,100% 100%!important
+}
+
+#dashboard .module-board-modern{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+#dashboard .module-board-modern .module-tile{
+ min-height:75px;padding:9px;border:1px solid #dce8ed;border-radius:11px;background:#fbfdfe;
+ box-shadow:none;transition:.2s ease
+}
+#dashboard .module-board-modern .module-tile:hover{transform:translateY(-2px);border-color:#a9d8e8;box-shadow:0 8px 16px rgba(13,65,94,.08)}
+#dashboard .module-board-modern .module-tile:before{width:2px;background:#0aaf7c}
+#dashboard .module-board-modern .mtop b{font-size:8px;color:#173d56}.module-board-modern .mtop strong{font-size:14px;color:#078a68}
+#dashboard .module-board-modern small{font-size:6px}.module-board-modern .meter{height:5px;margin-top:7px;background:#e7eef1}
+#dashboard .module-board-modern .meter i{background:linear-gradient(90deg,#08ac7a,#3ed1ad)!important}
+
+#dashboard .bu-summary-list{gap:6px}
+#dashboard .bu-summary-card{padding:9px!important;border:1px solid #dce8ee;border-radius:10px;background:#fff;box-shadow:none}
+#dashboard .bu-summary-card:hover{transform:translateX(2px);box-shadow:0 6px 14px rgba(12,55,80,.07)}
+#dashboard .bu-summary-head b{font-size:8px;color:#183f57}.bu-summary-head small{font-size:6px}.bu-summary-head strong{font-size:17px;color:#078b6a}
+#dashboard .bu-summary-bar{height:6px;margin:6px 0;background:#e7eef1}.bu-summary-bar i{background:linear-gradient(90deg,#08ac7a,#48cfac)}
+#dashboard .bu-summary-foot{font-size:6px}
+
+#dashboard .px-bottom-grid .px-card{min-height:180px}
+#dashboard .px-donut-layout{display:flex;align-items:center;justify-content:center;gap:16px;min-height:115px}
+#dashboard .px-donut-wrap{width:128px;height:128px;display:grid;place-items:center}
+#dashboard .px-donut{
+ width:112px;height:112px;border-radius:50%;position:relative;
+ background:conic-gradient(#08ae78 0 75%,#f04f55 75% 100%);
+ box-shadow:0 7px 17px rgba(14,69,88,.10)
+}
+#dashboard .px-donut:after{content:"";position:absolute;inset:20px;border-radius:50%;background:#fff}
+#dashboard .px-donut>div{position:absolute;z-index:2;inset:0;display:grid;place-content:center;text-align:center}
+#dashboard .px-donut b{font-size:17px;color:#123754}.px-donut small{font-size:6px;color:#7f919b}
+#dashboard .px-donut-legend{display:flex;flex-direction:column;gap:10px;min-width:105px}
+#dashboard .px-donut-legend span{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:8px;color:#355366}
+#dashboard .px-donut-legend span:before{content:"";width:9px;height:9px;border-radius:50%;background:#08ae78;margin-right:4px;box-shadow:0 0 0 3px rgba(8,174,120,.10)}
+#dashboard .px-donut-legend span:nth-child(2):before{background:#f4b11b;box-shadow:0 0 0 3px rgba(244,177,27,.10)}
+#dashboard .px-donut-legend span:nth-child(3):before{background:#ef555a;box-shadow:0 0 0 3px rgba(239,85,90,.10)}
+#dashboard .px-donut-legend b:last-child{font-weight:950;color:#123754}
+
+#dashboard .px-followup-chart{min-height:130px;padding-top:3px}
+#dashboard .px-followup-chart svg{width:100%;height:145px;display:block}
+#dashboard .px-action-list{display:flex!important;flex-direction:column;gap:5px!important}
+#dashboard .px-action-list button{
+ width:100%;display:grid!important;grid-template-columns:25px 1fr 12px;align-items:center;gap:7px;
+ min-height:34px!important;padding:5px 6px!important;border:0!important;border-bottom:1px solid #edf2f4!important;
+ border-radius:7px!important;background:#fff!important;color:#193f56!important;text-align:left!important;box-shadow:none!important
+}
+#dashboard .px-action-list button:hover{background:#f4fafc!important;transform:translateX(3px)!important}
+#dashboard .px-action-list button>b{
+ width:23px;height:23px;border-radius:7px;background:#e9f5ff;color:#147bc3;display:grid;place-items:center;font-size:11px
+}
+#dashboard .px-action-list button:nth-child(4)>b{background:#fff1df;color:#e78c13}
+#dashboard .px-action-list button:nth-child(5)>b{background:#f3edff;color:#7354c8}
+#dashboard .px-action-list button:nth-child(6)>b{background:#e9f8f2;color:#079c70}
+#dashboard .px-action-list strong{display:block;font-size:7px}.px-action-list small{display:block;color:#899aa4;font-size:6px;margin-top:1px}
+#dashboard .px-action-list em{font-style:normal;color:#1c6da2;font-size:15px}
+
+#dashboard .px-insight-grid .px-card{min-height:150px}
+#dashboard #execRisk .clickable-card,#dashboard #execCoverage .clickable-card{
+ margin-bottom:5px!important;padding:7px!important;border-radius:8px!important;border:1px solid #edf2f4!important;background:#fbfdfe!important
+}
+#dashboard #execRisk .clickable-card:hover,#dashboard #execCoverage .clickable-card:hover{background:#f5fafc!important;border-color:#cfe2ec!important}
+#dashboard #execRisk b{font-size:8px!important;color:#23495f}
+#dashboard #execRisk small{font-size:6px!important}
+#dashboard #execCoverage b,#dashboard #execCoverage span{font-size:7px!important}
+#dashboard #execCoverage .meter{height:5px!important;background:#e7eef1}
+#dashboard #execCoverage .meter i{background:linear-gradient(90deg,#1d8bd0,#19b983)!important}
+
+#dashboard .px-recap-card{min-height:150px}
+#dashboard .px-recap-card .table-wrap{max-height:112px;overflow:auto}
+#dashboard .px-recap-card table{font-size:7px}
+#dashboard .px-recap-card th{font-size:6px;padding:6px;color:#668091;background:#f5f9fb}
+#dashboard .px-recap-card td{padding:6px;border-bottom:1px solid #edf2f4}
+
+#dashboard .portal-strip,#dashboard .portal-section-title,#dashboard .portal-module-grid{display:none!important}
+#dashboard .portal-analytics-head{display:none!important}
+#dashboard .portal-recap{display:none!important}
+
+@media(max-width:1250px){
+ #dashboard .px-top-grid{grid-template-columns:1.35fr 1fr}.px-bu-card{grid-column:1/-1}
+ #dashboard .px-bottom-grid{grid-template-columns:1fr 1.35fr}
+ #dashboard .px-action-card{grid-column:1/-1}
+ #dashboard .dash-kpis{grid-template-columns:repeat(3,1fr)!important}
+}
+@media(max-width:900px){
+ .app{grid-template-columns:72px 1fr}.sidebar{width:72px;padding:12px 8px}.brand h2,.brand .sidebar-she-subtitle-final,.user-profile-mini div,.nav-label,.nav button span,.sidebar-note{display:none}
+ .brand{text-align:center;border:0}.proper-logo{margin:auto}.user-profile-mini{text-align:center;padding:6px}
+ .nav button{justify-content:center;font-size:15px!important;padding:8px!important}.nav button .chat-unread{display:block!important}
+ #dashboard{padding:0 10px 25px!important}.px-hero{padding-right:145px!important}.px-hero h1{font-size:28px!important}
+ #dashboard .px-top-grid,#dashboard .px-bottom-grid,#dashboard .px-insight-grid{grid-template-columns:1fr}
+ #dashboard .px-bu-card,#dashboard .px-action-card{grid-column:auto}
+}
+@media(max-width:600px){
+ #dashboard .px-hero{min-height:130px;padding:18px 15px!important}.px-hero-art{display:none!important}.px-clock{top:auto!important;bottom:12px!important;right:12px!important}
+ #dashboard .px-filterbar{display:block}.portal-filter-mini{justify-content:flex-start!important;margin-top:8px}
+ #dashboard .dash-kpis{grid-template-columns:1fr 1fr!important}
+ #dashboard .chart-head{display:block!important}.chart-toolbar{margin-top:8px}
+ #dashboard .module-board-modern{grid-template-columns:1fr 1fr}
+}
+</style>
+
 </head>
 <body>
 <datalist id="ppaLocationSuggestions"></datalist>
@@ -2111,118 +2405,134 @@ table th:last-child,table td:last-child{min-width:190px}
 
 <main class="main">
 <section id="dashboard" class="page active portal-dashboard">
-  <div class="portal-header">
-    <div class="portal-header-left">
-      <div class="portal-kicker">PROPER • SISTEM PEMANTAUAN KEPATUHAN LINGKUNGAN</div>
-      <h1>Dashboard Utama</h1>
-      <p>Ringkasan dan akses cepat seluruh aspek penilaian PROPER dalam satu portal.</p>
+  <div class="px-dashboard-shell">
+    <header class="px-hero">
+      <div class="px-hero-copy">
+        <div class="px-kicker">EXECUTIVE VIEW</div>
+        <h1>Ringkasan Kinerja PROPER</h1>
+        <p>Monitoring capaian dan kepatuhan lingkungan di seluruh unit usaha.</p>
+      </div>
+      <div class="px-hero-art" aria-hidden="true">
+        <div class="px-skyline"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="px-tank t1"></div><div class="px-tank t2"></div><div class="px-stack"></div>
+        <div class="px-leaf l1">◢</div><div class="px-leaf l2">◢</div>
+      </div>
+      <div class="px-clock"><span>▣</span><b id="dashToday">11 September 2026</b><small id="dashTime">13:24 WIB</small></div>
+    </header>
+
+    <div class="px-filterbar">
+      <div class="px-filter-title"><span>LIVE PERFORMANCE</span><b>Executive Monitoring</b></div>
+      <div class="portal-filter-mini">
+        <select id="execFilterBusinessUnit" onchange="applyExecutiveFilters()"><option value="">Semua Business Unit</option></select>
+        <select id="execFilterModule" onchange="applyExecutiveFilters()"><option value="">Semua Aspek</option></select>
+        <select id="execFilterSite" onchange="applyExecutiveFilters()"><option value="">Semua Lokasi</option></select>
+        <select id="execFilterYear" onchange="applyExecutiveFilters()"><option value="">Semua Tahun</option></select>
+        <select id="execFilterMonth" onchange="applyExecutiveFilters()"><option value="">Semua Bulan</option></select>
+        <button onclick="resetExecutiveFilters()">Reset</button>
+        <button class="px-refresh" onclick="loadExecutiveAnalytics(true)" title="Refresh data">↻</button>
+      </div>
     </div>
-    <div class="portal-header-right">
-      <div class="portal-date">▣ <span id="dashToday">26 Agustus 2026</span></div>
-      <button class="portal-round" onclick="loadExecutiveAnalytics(true)" title="Refresh">↻</button>
-      <button class="portal-user" onclick="openProfileModal()"><img id="topUserAvatar" src="logo.png" alt="Profil"><span><b id="topUserName">User</b><small id="topUserRole">PIC</small></span><em>Profil</em></button>
-    </div>
-  </div>
 
-  <div class="portal-strip">
-    <div class="portal-strip-title"><span>PELAPORAN</span><b>PROPER</b></div>
-    <div class="portal-strip-note">Semua aspek penilaian, pemantauan, dokumentasi dan tindak lanjut.</div>
-  </div>
+    <div class="exec-kpis dash-kpis" id="execKpis"></div>
 
-  <div class="portal-section-title">
-    <div><span>MENU UTAMA</span><h2>Akses Aspek Penilaian</h2></div>
-    <div class="portal-live"><i></i> Data terhubung</div>
-  </div>
-
-  <div class="portal-module-grid">
-    <button class="portal-module portal-green" onclick="showPage('ppa')">
-      <strong>ASPEK PPA</strong><span>PENGENDALIAN PENCEMARAN AIR</span><i>→</i>
-    </button>
-    <button class="portal-module portal-blue" onclick="showPage('emisi')">
-      <strong>ASPEK PPU</strong><span>PENGENDALIAN PENCEMARAN UDARA &amp; EMISI</span><i>→</i>
-    </button>
-    <button class="portal-module portal-cyan" onclick="showPage('plb3')">
-      <strong>ASPEK PENYIMPANAN PLB3</strong><span>PENGELOLAAN PENYIMPANAN LIMBAH B3</span><i>→</i>
-    </button>
-    <button class="portal-module portal-orange" onclick="showPage('plb3darurat')">
-      <strong>ASPEK SISTEM TANGGAP DARURAT PLB3</strong><span>PROGRAM &amp; KESIAPSIAGAAN DARURAT</span><i>→</i>
-    </button>
-    <button class="portal-module portal-yellow" onclick="showPage('b3')">
-      <strong>ASPEK B3</strong><span>PENGELOLAAN B3 &amp; PCBs</span><i>→</i>
-    </button>
-    <button class="portal-module portal-amber" onclick="showPage('sampah')">
-      <strong>ASPEK SAMPAH</strong><span>PENGELOLAAN, PEMILAHAN &amp; PELAPORAN SAMPAH</span><i>→</i>
-    </button>
-    <button class="portal-module portal-navy" onclick="showPage('monitoring')">
-      <strong>MONITORING &amp; REKAP</strong><span>HASIL INSPEKSI SELURUH ASPEK</span><i>→</i>
-    </button>
-    <button class="portal-module portal-purple" onclick="showPage('chat')">
-      <strong>CHAT TIM PROPER</strong><span>KOORDINASI &amp; TINDAK LANJUT LAPANGAN</span><i>→</i>
-    </button>
-    <button class="portal-module portal-slate" onclick="openProfileModal()">
-      <strong>PROFIL SAYA</strong><span>AKUN, FOTO PROFIL &amp; PENGATURAN</span><i>→</i>
-    </button>
-  </div>
-
-  <div class="portal-analytics-head">
-    <div><span>EXECUTIVE VIEW</span><h2>Ringkasan Kinerja PROPER</h2><p>Summary otomatis dari data yang diinput seluruh PIC.</p></div>
-    <div class="portal-filter-mini">
-      <select id="execFilterBusinessUnit" onchange="applyExecutiveFilters()"><option value="">Semua Business Unit</option></select><select id="execFilterModule" onchange="applyExecutiveFilters()"><option value="">Semua Aspek</option></select>
-      <select id="execFilterSite" onchange="applyExecutiveFilters()"><option value="">Semua Lokasi</option></select>
-      <select id="execFilterYear" onchange="applyExecutiveFilters()"><option value="">Semua Tahun</option></select>
-      <select id="execFilterMonth" onchange="applyExecutiveFilters()"><option value="">Semua Bulan</option></select>
-      <button onclick="resetExecutiveFilters()">Reset</button>
-    </div>
-  </div>
-
-  <div class="exec-kpis dash-kpis" id="execKpis"></div>
-
-  <div class="portal-analytics-grid dashboard-modern-grid">
-    <div class="portal-panel portal-wide chart-main-card">
-      <div class="portal-panel-head chart-head">
-        <div>
-          <span>PERFORMA BUSINESS UNIT</span>
-          <h3>Trend Kepatuhan per Business Unit</h3>
-          <p>Perbandingan perkembangan persentase kepatuhan setiap unit dari bulan ke bulan.</p>
+    <div class="px-grid px-top-grid">
+      <section class="portal-panel px-card px-trend-card">
+        <div class="portal-panel-head chart-head">
+          <div>
+            <div class="px-section-icon">▥</div>
+            <span>PERFORMA BUSINESS UNIT</span>
+            <h3>Trend Kepatuhan per Business Unit</h3>
+            <p>Perbandingan persentase kepatuhan setiap unit dari waktu ke waktu.</p>
+          </div>
+          <div class="chart-toolbar">
+            <button type="button" class="chart-switch active" data-chart-type="line" onclick="setExecutiveChartType('line')">Trend</button>
+            <button type="button" class="chart-switch" data-chart-type="bar" onclick="setExecutiveChartType('bar')">Bar</button>
+            <button type="button" class="chart-switch" data-chart-type="donut" onclick="setExecutiveChartType('donut')">Donut</button>
+            <div class="chart-overall"><small>OVERALL</small><b id="execAvg">0%</b></div>
+          </div>
         </div>
-        <div class="chart-toolbar">
-          <button type="button" class="chart-switch active" data-chart-type="line" onclick="setExecutiveChartType('line')">Trend</button>
-          <button type="button" class="chart-switch" data-chart-type="bar" onclick="setExecutiveChartType('bar')">Bar</button>
-          <button type="button" class="chart-switch" data-chart-type="donut" onclick="setExecutiveChartType('donut')">Donut</button>
-          <div class="chart-overall"><small>Overall</small><b id="execAvg">0%</b></div>
+        <div id="execTrend" class="executive-chart-stage"></div>
+      </section>
+
+      <section class="portal-panel px-card px-module-card">
+        <div class="portal-panel-head">
+          <div class="px-section-icon">▤</div>
+          <span>ASPEK</span><h3>Capaian Aspek</h3><p>Ringkasan capaian setiap aspek yang sudah dicek.</p>
         </div>
-      </div>
-      <div id="execTrend" class="executive-chart-stage"></div>
+        <div id="execModules" class="module-board module-board-modern"></div>
+      </section>
+
+      <section class="portal-panel px-card px-bu-card">
+        <div class="portal-panel-head px-panel-title-row">
+          <div><div class="px-section-icon">▦</div><span>BUSINESS UNIT</span><h3>Ringkasan Unit Usaha</h3><p>Rata-rata kepatuhan dan jumlah assessment per unit.</p></div>
+          <button class="px-detail-btn" onclick="showPage('monitoring')">Lihat Detail →</button>
+        </div>
+        <div id="execLocations" class="ranking-pro bu-summary-list"></div>
+      </section>
     </div>
 
-    <div class="portal-panel performance-card">
-      <div class="portal-panel-head">
-        <div><span>ASPEK</span><h3>Performa Aspek</h3><p>Ringkasan seluruh aspek yang sudah diinspeksi.</p></div>
-      </div>
-      <div id="execModules" class="module-board module-board-modern"></div>
+    <div class="px-grid px-bottom-grid">
+      <section class="portal-panel px-card px-donut-card">
+        <div class="portal-panel-head">
+          <div class="px-section-icon">◉</div><span>HASIL ASSESSMENT</span><h3>Distribusi Hasil Assessment</h3>
+          <p>Komposisi hasil inspeksi berdasarkan tingkat kepatuhan.</p>
+        </div>
+        <div class="px-donut-layout">
+          <div class="px-donut-wrap">
+            <div id="dashStatusDonut" class="px-donut"><div><b id="dashDonutPct">0%</b><small>Total Temuan</small></div></div>
+          </div>
+          <div id="dashStatusLegend" class="px-donut-legend"></div>
+        </div>
+      </section>
+
+      <section class="portal-panel px-card px-month-card">
+        <div class="portal-panel-head">
+          <div class="px-section-icon">▥</div><span>MONITORING</span><h3>Tren Kepatuhan Bulanan</h3>
+          <p>Pergerakan hasil YA dan TIDAK dari waktu ke waktu.</p>
+        </div>
+        <div id="dashFollowupChart" class="px-followup-chart"></div>
+      </section>
+
+      <section class="portal-panel px-card px-action-card">
+        <div class="portal-panel-head px-panel-title-row">
+          <div><div class="px-section-icon">ϟ</div><span>AKSI CEPAT</span><h3>Input Penilaian</h3></div>
+          <button class="px-detail-btn" onclick="showPage('monitoring')">Lihat Semua →</button>
+        </div>
+        <div class="quick-actions portal-quick px-action-list">
+          <button onclick="showPage('ppa')"><b>✓</b><span><strong>Input PPA</strong><small>Pengendalian pencemaran air</small></span><em>›</em></button>
+          <button onclick="showPage('emisi')"><b>◉</b><span><strong>Input PPU / Emisi</strong><small>Pengendalian emisi udara</small></span><em>›</em></button>
+          <button onclick="showPage('plb3')"><b>▦</b><span><strong>Input Penyimpanan PLB3</strong><small>Pengelolaan limbah B3</small></span><em>›</em></button>
+          <button onclick="showPage('plb3darurat')"><b>!</b><span><strong>Tanggap Darurat PLB3</strong><small>Kesiapsiagaan darurat</small></span><em>›</em></button>
+          <button onclick="showPage('b3')"><b>⚗</b><span><strong>Input B3</strong><small>Pengelolaan bahan berbahaya</small></span><em>›</em></button>
+          <button onclick="showPage('sampah')"><b>♻</b><span><strong>Input Sampah</strong><small>Pemilahan & pengelolaan sampah</small></span><em>›</em></button>
+        </div>
+      </section>
     </div>
 
-    <div class="portal-panel performance-card">
-      <div class="portal-panel-head">
-        <div><span>BUSINESS UNIT</span><h3>Ringkasan Unit Usaha</h3><p>Rata-rata kepatuhan dan jumlah assessment per unit.</p></div>
-      </div>
-      <div id="execLocations" class="ranking-pro bu-summary-list"></div>
+    <div class="px-grid px-insight-grid">
+      <section class="portal-panel px-card">
+        <div class="portal-panel-head"><div class="px-section-icon">!</div><span>RISIKO</span><h3>Risk Snapshot</h3><p>Assessment dengan nilai terendah yang perlu diperhatikan.</p></div>
+        <div id="execRisk"></div>
+      </section>
+      <section class="portal-panel px-card">
+        <div class="portal-panel-head"><div class="px-section-icon">◫</div><span>COVERAGE</span><h3>Coverage Aspek</h3><p>Jumlah assessment per aspek.</p></div>
+        <div id="execCoverage"></div>
+      </section>
+      <section class="portal-panel px-card px-recap-card">
+        <div class="portal-panel-head px-panel-title-row">
+          <div><div class="px-section-icon">▤</div><span>LIVE RECAP</span><h3>Assessment Terbaru</h3><p>Data terbaru dari seluruh aspek PROPER.</p></div>
+          <button class="px-detail-btn" onclick="showPage('rekap')">Lihat Rekap →</button>
+        </div>
+        <div id="dashRecentAllTable" class="table-wrap"><table><thead><tr><th>Aspek</th><th>Business Unit</th><th>Lokasi</th><th>Auditor</th><th>Tanggal</th><th>%</th><th>Status</th></tr></thead><tbody></tbody></table></div>
+      </section>
     </div>
-  </div>
 
-  <div class="portal-lower-grid">
-    <div class="portal-panel"><div class="portal-panel-head"><div><span>RISIKO</span><h3>Risk Snapshot</h3><p>Assessment dengan nilai terendah.</p></div></div><div id="execRisk"></div></div>
-    <div class="portal-panel"><div class="portal-panel-head"><div><span>COVERAGE</span><h3>Coverage Aspek</h3><p>Jumlah assessment per aspek.</p></div></div><div id="execCoverage"></div></div>
-    <div class="portal-panel"><div class="portal-panel-head"><div><span>AKSI CEPAT</span><h3>Input Penilaian</h3><p>Akses langsung ke form.</p></div></div><div class="quick-actions portal-quick">
-      <button onclick="showPage('ppa')">✓ <span>Input PPA</span></button><button onclick="showPage('emisi')">◉ <span>Input PPU</span></button><button onclick="showPage('plb3')">▦ <span>Input PLB3</span></button><button onclick="showPage('plb3darurat')">⚠ <span>Tanggap Darurat</span></button><button onclick="showPage('b3')">⚗ <span>Input B3</span></button><button onclick="showPage('sampah')">♻ <span>Input Sampah</span></button>
-    </div></div>
-  </div>
-
-  <div class="portal-panel portal-recap"><div class="portal-panel-head"><div><span>LIVE RECAP</span><h3>Assessment Terbaru Semua Aspek</h3><p>PPA, PPU/Emisi, Penyimpanan PLB3, Tanggap Darurat PLB3, B3 dan Sampah.</p></div><button class="portal-text-btn" onclick="showPage('rekap')">Lihat rekap lengkap →</button></div><div id="dashRecentAllTable" class="table-wrap"><table><thead><tr><th>Aspek</th><th>Business Unit</th><th>Lokasi</th><th>Auditor</th><th>Tanggal</th><th>%</th><th>Status</th></tr></thead><tbody></tbody></table></div></div>
-
-  <!-- Containers retained for existing analytics code -->
-  <div style="display:none">
-    <div id="execSync"></div><div id="dashModuleTable"></div><div id="dashActivity"></div><div id="dashReminders"></div><div id="allModuleCards"></div><div id="dashStatusDonut"></div><div id="dashStatusLegend"></div><div id="dashDonutPct"></div><div id="dashLocationBars"></div><div id="dashStatusRing"></div><div id="dashYesPct"></div><div id="dashYesTotal"></div><div id="dashNoTotal"></div><div id="dashFollowupChart"></div>
+    <!-- Compatibility containers retained for the existing analytics functions. -->
+    <div style="display:none">
+      <div id="execSync"></div><div id="dashModuleTable"></div><div id="dashActivity"></div><div id="dashReminders"></div>
+      <div id="allModuleCards"></div><div id="dashStatusRing"></div><div id="dashYesPct"></div><div id="dashYesTotal"></div>
+      <div id="dashNoTotal"></div><div id="heroOverall"></div><div id="heroSync"></div>
+    </div>
   </div>
 </section>
 
