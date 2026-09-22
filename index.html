@@ -1774,6 +1774,136 @@ body{background:#f3f6f4!important}
 }
 </style>
 
+
+<style id="proper-access-aurora-v6">
+/* =========================================================
+   PROPER • ACCESS ASPECT AURORA
+   Visual layer only: richer gradients, controlled glow,
+   animated light sweep and stronger aspect identity.
+   ========================================================= */
+.portal-module-grid{gap:16px!important}
+.portal-module.aspect-launch-card,
+.portal-module:not(.aspect-launch-card){
+  --accent:#0a7c58;
+  --accent2:#34c89a;
+  --wash:rgba(18,165,121,.12);
+  min-height:174px!important;
+  border:1px solid rgba(10,45,33,.09)!important;
+  border-top:0!important;
+  border-radius:18px!important;
+  padding:20px 20px 19px!important;
+  overflow:hidden!important;
+  isolation:isolate;
+  background:
+    radial-gradient(circle at 100% 0%, var(--wash) 0, transparent 42%),
+    linear-gradient(145deg,#ffffff 0%,#fbfdfc 54%,rgba(255,255,255,.98) 100%)!important;
+  box-shadow:0 7px 22px rgba(6,35,26,.055), inset 0 1px 0 rgba(255,255,255,.95)!important;
+  transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s ease,border-color .28s ease,background .28s ease!important;
+}
+.portal-module.aspect-launch-card::before,
+.portal-module:not(.aspect-launch-card)::before{
+  content:"";
+  position:absolute;
+  left:-30px;top:-65px;
+  width:175px;height:175px;
+  border-radius:50%;
+  background:radial-gradient(circle,var(--accent2) 0,rgba(255,255,255,0) 68%);
+  opacity:.14;
+  filter:blur(2px);
+  z-index:-2;
+  animation:aspectOrbFloat 7s ease-in-out infinite;
+}
+.portal-module.aspect-launch-card::after,
+.portal-module:not(.aspect-launch-card)::after{
+  content:"";
+  position:absolute;
+  inset:-30% auto -30% -85%;
+  width:55%;
+  transform:skewX(-18deg) translateX(-130%);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.64),transparent);
+  opacity:0;
+  z-index:3;
+  pointer-events:none;
+}
+.portal-module.aspect-launch-card:hover,
+.portal-module:not(.aspect-launch-card):hover{
+  transform:translateY(-5px)!important;
+  border-color:color-mix(in srgb,var(--accent) 35%, #dce7e2)!important;
+  box-shadow:0 18px 38px rgba(6,35,26,.12),0 0 0 1px color-mix(in srgb,var(--accent) 18%, transparent)!important;
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in srgb,var(--wash) 130%, white) 0, transparent 46%),
+    linear-gradient(145deg,#ffffff 0%,#f8fcfa 55%,#ffffff 100%)!important;
+}
+.portal-module.aspect-launch-card:hover::after,
+.portal-module:not(.aspect-launch-card):hover::after{
+  opacity:1;
+  animation:aspectSweep .9s ease-out forwards;
+}
+.aspect-launch-card .dashboard-aspect-symbol{
+  width:54px!important;height:54px!important;
+  margin:0 0 18px!important;
+  display:grid!important;place-items:center!important;
+  border-radius:16px!important;
+  color:#fff!important;
+  background:linear-gradient(145deg,var(--accent2),var(--accent))!important;
+  box-shadow:0 10px 22px color-mix(in srgb,var(--accent) 28%, transparent), inset 0 1px 0 rgba(255,255,255,.28)!important;
+  position:relative;
+  overflow:hidden;
+  transform:translateZ(0);
+}
+.aspect-launch-card .dashboard-aspect-symbol::before{
+  content:"";position:absolute;inset:3px;border-radius:13px;border:1px solid rgba(255,255,255,.22);opacity:.7;
+}
+.aspect-launch-card .dashboard-aspect-symbol::after{
+  content:"";position:absolute;width:85px;height:20px;right:-22px;top:-10px;transform:rotate(-36deg);
+  background:rgba(255,255,255,.22);filter:blur(4px);animation:symbolGlint 3.8s ease-in-out infinite;
+}
+.aspect-launch-card .dashboard-aspect-symbol svg{width:26px!important;height:26px!important;position:relative;z-index:2;filter:drop-shadow(0 2px 3px rgba(0,0,0,.14))}
+.aspect-launch-card strong{display:block!important;font-size:14px!important;letter-spacing:.01em!important;font-weight:800!important;color:var(--ink)!important;margin:0 0 7px!important;position:relative;z-index:2}
+.aspect-launch-card > span:not(.dashboard-aspect-symbol){display:block!important;font-size:9.7px!important;line-height:1.45!important;letter-spacing:.02em!important;color:var(--muted)!important;font-weight:700!important;max-width:88%;position:relative;z-index:2}
+.aspect-launch-card > i{right:18px!important;top:auto!important;bottom:18px!important;transform:none!important;width:32px!important;height:32px!important;border-radius:50%!important;display:grid!important;place-items:center!important;background:color-mix(in srgb,var(--accent) 12%,white)!important;color:var(--accent)!important;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 18%,transparent)!important;font-size:15px!important;font-style:normal!important;z-index:4}
+.aspect-launch-card:hover > i{transform:translateX(4px)!important;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 34%,transparent),0 8px 18px color-mix(in srgb,var(--accent) 12%,transparent)!important}
+
+/* Identity per aspect */
+.portal-module.aspect-launch-card.portal-green{--accent:#0a7c58;--accent2:#35c99a;--wash:rgba(18,165,121,.16)}
+.portal-module.aspect-launch-card.portal-blue{--accent:#2f6fe0;--accent2:#79a8ff;--wash:rgba(47,111,224,.16)}
+.portal-module.aspect-launch-card.portal-cyan{--accent:#0891b2;--accent2:#55d0ea;--wash:rgba(8,145,178,.16)}
+.portal-module.aspect-launch-card.portal-orange{--accent:#e07a1f;--accent2:#ffb35f;--wash:rgba(224,122,31,.17)}
+.portal-module.aspect-launch-card.portal-navy{--accent:#334e8f;--accent2:#7189d1;--wash:rgba(51,78,143,.15)}
+.portal-module.aspect-launch-card.portal-yellow{--accent:#c99a10;--accent2:#f3c94f;--wash:rgba(201,154,16,.18)}
+.portal-module.aspect-launch-card.portal-amber{--accent:#4e8d19;--accent2:#8dca40;--wash:rgba(78,141,25,.16)}
+
+/* Non-aspect access cards get the same richer treatment */
+.portal-module.portal-purple{--accent:#6f52c9;--accent2:#a18ee8;--wash:rgba(111,82,201,.15)}
+.portal-module.portal-slate{--accent:#475569;--accent2:#94a3b8;--wash:rgba(71,85,105,.13)}
+.portal-module.portal-navy:not(.aspect-launch-card){--accent:#334e8f;--accent2:#7189d1;--wash:rgba(51,78,143,.14)}
+.portal-module:not(.aspect-launch-card){
+  justify-content:center!important;
+  gap:7px!important;
+  padding-right:48px!important;
+}
+.portal-module:not(.aspect-launch-card)::before{opacity:.11}
+.portal-module:not(.aspect-launch-card)::after{display:block}
+.portal-module:not(.aspect-launch-card)::marker{display:none}
+.portal-module:not(.aspect-launch-card) strong{font-size:14px!important;font-weight:800!important;color:var(--ink)!important}
+.portal-module:not(.aspect-launch-card) span{font-size:9.7px!important;font-weight:700!important;color:var(--muted)!important;line-height:1.45!important}
+.portal-module:not(.aspect-launch-card)::after{content:""}
+.portal-module:not(.aspect-launch-card) > i{right:16px!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;width:32px!important;height:32px!important;border-radius:50%!important;background:color-mix(in srgb,var(--accent) 12%,white)!important;color:var(--accent)!important;display:grid!important;place-items:center!important;font-style:normal!important}
+.portal-module:not(.aspect-launch-card):hover > i{transform:translateY(-50%) translateX(4px)!important}
+
+@keyframes aspectOrbFloat{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(18px,10px,0) scale(1.06)}}
+@keyframes aspectSweep{0%{transform:skewX(-18deg) translateX(-130%)}100%{transform:skewX(-18deg) translateX(330%)}}
+@keyframes symbolGlint{0%,65%,100%{transform:translateX(0) rotate(-36deg);opacity:0}72%{opacity:.55}84%{transform:translateX(-58px) rotate(-36deg);opacity:.14}}
+
+@media(max-width:1200px){.portal-module-grid{grid-template-columns:1fr 1fr!important}}
+@media(max-width:800px){.portal-module-grid{grid-template-columns:1fr!important}.portal-module.aspect-launch-card,.portal-module:not(.aspect-launch-card){min-height:154px!important}}
+@media(prefers-reduced-motion:reduce){
+ .portal-module.aspect-launch-card,.portal-module:not(.aspect-launch-card){transition:none!important}
+ .portal-module.aspect-launch-card::before,.portal-module.aspect-launch-card::after,
+ .aspect-launch-card .dashboard-aspect-symbol::after,.portal-module:not(.aspect-launch-card)::before,.portal-module:not(.aspect-launch-card)::after{animation:none!important}
+}
+</style>
+
 </head>
 <body>
 <datalist id="ppaLocationSuggestions"></datalist>
