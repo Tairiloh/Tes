@@ -1617,6 +1617,163 @@ body{background:#f3f6f4!important}
 @media(prefers-reduced-motion:reduce){.aspect-symbol:after,.page.aspect-modern .aspect-hero-mark:after{animation:none!important}}
 </style>
 
+
+<!-- PROPER Motion Design Stack: GSAP + ScrollTrigger (loaded from CDN; page remains functional if CDN is unavailable) -->
+<script id="proper-motion-gsap" src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+
+<style id="proper-motion-design-v1">
+/* -------------------------------------------------------------------------
+   PROPER Motion Design System
+   - GSAP-ready UI choreography
+   - SVG HUD / text-path accents
+   - pointer parallax + magnetic interactions
+   - optional Three.js ambient scene in the active aspect hero
+   ------------------------------------------------------------------------- */
+:root{
+  --motion-ease:cubic-bezier(.22,1,.36,1);
+  --motion-ink:#0b241b;
+  --motion-line:rgba(9,58,42,.10);
+}
+
+/* Dashboard launch cards: subtle depth + animated light field. */
+.portal-module.aspect-launch-card{
+  --mx:50%; --my:50%;
+  transform-style:preserve-3d;
+  will-change:transform;
+  isolation:isolate;
+  overflow:hidden;
+}
+.portal-module.aspect-launch-card::after{
+  background:
+    radial-gradient(150px circle at var(--mx) var(--my), color-mix(in srgb, var(--m) 13%, white), transparent 62%),
+    linear-gradient(105deg, transparent 35%, rgba(255,255,255,.42) 49%, transparent 63%) !important;
+  background-size:auto,220% 100% !important;
+  animation:aspectCardSheen 7s ease-in-out infinite;
+  mix-blend-mode:normal;
+}
+.portal-module.aspect-launch-card:hover::after{animation:none;background-size:auto,100% 100%!important}
+@keyframes aspectCardSheen{
+  0%,58%{background-position:50% 50%, -80% 0}
+  76%,100%{background-position:50% 50%, 180% 0}
+}
+.portal-module.aspect-launch-card .dashboard-aspect-symbol{
+  transform:translateZ(16px);
+  will-change:transform;
+}
+.portal-module.aspect-launch-card strong,
+.portal-module.aspect-launch-card span,
+.portal-module.aspect-launch-card i{transform:translateZ(9px)}
+.portal-module.aspect-launch-card .dashboard-aspect-symbol svg path{
+  stroke-dasharray:90;
+  stroke-dashoffset:0;
+}
+
+/* Aspect page hero: reserved visual field for the Three.js scene + SVG HUD. */
+.page.aspect-modern .aspect-hero{
+  --hero-accent:#0b8a65;
+  --hero-soft:#e9f7f1;
+  perspective:1200px;
+  transform-style:preserve-3d;
+}
+.page.aspect-modern .aspect-hero-bg{
+  width:56%;
+  background:linear-gradient(120deg,rgba(255,255,255,.98),var(--hero-soft));
+}
+.page.aspect-modern .aspect-hero-bg::before{
+  background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.96) 12%,rgba(255,255,255,.35) 68%,rgba(255,255,255,.02) 100%);
+}
+.aspect-motion-canvas{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  display:block;
+  z-index:0;
+  opacity:.82;
+  pointer-events:none;
+}
+.aspect-hero .aspect-hero-mark,
+.aspect-hero .aspect-hero-copy,
+.aspect-hero .aspect-hero-action{will-change:transform}
+.aspect-hero .aspect-hero-mark{
+  box-shadow:0 14px 30px rgba(4,48,34,.12), inset 0 0 0 1px rgba(255,255,255,.5);
+}
+.aspect-hero .aspect-hero-copy{z-index:4}
+.aspect-hero .aspect-kicker{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+}
+.aspect-hero .aspect-kicker::before{
+  content:"";
+  width:22px;height:2px;border-radius:3px;background:var(--hero-accent);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--hero-accent) 12%,transparent);
+}
+.aspect-motion-hud{
+  position:absolute;
+  inset:0;
+  width:100%;height:100%;
+  pointer-events:none;
+  z-index:2;
+  overflow:visible;
+}
+.aspect-motion-hud .hud-ring{
+  fill:none;
+  stroke:var(--hero-accent);
+  stroke-width:1;
+  opacity:.18;
+  transform-origin:70% 50%;
+}
+.aspect-motion-hud .hud-ring.strong{stroke-width:1.2;opacity:.26}
+.aspect-motion-hud .hud-line{stroke:var(--hero-accent);stroke-width:1;opacity:.15}
+.aspect-motion-hud .hud-dot{fill:var(--hero-accent);opacity:.35}
+.aspect-motion-hud .hud-label{
+  font:700 7px Inter,system-ui,sans-serif;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  fill:var(--hero-accent);
+  opacity:.38;
+}
+.aspect-hero .aspect-motion-badge{
+  position:absolute;
+  right:20px;top:14px;z-index:4;
+  display:flex;align-items:center;gap:7px;
+  padding:6px 9px;border-radius:999px;
+  color:var(--hero-accent);
+  background:rgba(255,255,255,.64);
+  border:1px solid color-mix(in srgb,var(--hero-accent) 18%,white);
+  backdrop-filter:blur(10px);
+  font-size:8.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  box-shadow:0 8px 18px rgba(6,40,28,.05);
+}
+.aspect-hero .aspect-motion-badge i{width:6px;height:6px;border-radius:50%;background:var(--hero-accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--hero-accent) 12%,transparent);animation:motionPulse 1.8s ease-in-out infinite}
+@keyframes motionPulse{50%{transform:scale(.72);opacity:.62}}
+
+/* KPI micro-motion */
+.page.aspect-modern .aspect-kpi{
+  transform-style:preserve-3d;
+  will-change:transform,opacity;
+}
+.page.aspect-modern .aspect-kpi strong{font-variant-numeric:tabular-nums;}
+.page.aspect-modern .aspect-kpi .kpi-spark{
+  position:absolute;right:10px;bottom:8px;width:46px;height:24px;opacity:.26;pointer-events:none;
+}
+
+/* Reusable reveal state for fallback without GSAP. */
+.motion-reveal{opacity:0;transform:translateY(16px)}
+.motion-ready{opacity:1;transform:none}
+
+/* Reduced motion: preserve clarity and remove visual loops. */
+@media(prefers-reduced-motion:reduce){
+  .aspect-motion-badge i,.portal-module.aspect-launch-card::after{animation:none!important}
+  .aspect-motion-canvas,.aspect-motion-hud{display:none!important}
+  .motion-reveal{opacity:1!important;transform:none!important}
+}
+</style>
+
 </head>
 <body>
 <datalist id="ppaLocationSuggestions"></datalist>
@@ -8979,6 +9136,310 @@ function injectPage(id){
     setInterval(()=>Object.keys(aspectInfo).forEach(refreshKPIs),1800);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+})();
+</script>
+
+
+<script id="proper-motion-design-v1-js">
+(function(){
+  'use strict';
+
+  const REDUCED = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const ASPECTS = {
+    ppa:{accent:'#0b8a65', soft:'#e9f7f1', code:'PPA'},
+    emisi:{accent:'#2f6fd6', soft:'#ebf1ff', code:'PPU'},
+    plb3:{accent:'#159ab5', soft:'#e7f7fb', code:'PLB3'},
+    plb3darurat:{accent:'#e07a1f', soft:'#fff2e5', code:'DARURAT'},
+    b3:{accent:'#7656c5', soft:'#f1edfc', code:'B3 / PCBs'},
+    plnonb3:{accent:'#16865f', soft:'#eaf8f1', code:'NON-B3'},
+    sampah:{accent:'#b97805', soft:'#fff5df', code:'SAMPAH'}
+  };
+
+  const qs=(s,r=document)=>r.querySelector(s);
+  const qsa=(s,r=document)=>Array.from(r.querySelectorAll(s));
+  let threeState=null;
+  let originalShowPage=null;
+  let booted=false;
+
+  function setVar(el,k,v){if(el)el.style.setProperty(k,v)}
+
+  function loadThree(){
+    if(REDUCED || threeState==='loading') return Promise.resolve(null);
+    if(threeState) return Promise.resolve(threeState);
+    threeState='loading';
+    return import('https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js')
+      .then(mod=>{threeState=mod;return mod})
+      .catch(err=>{console.warn('[PROPER motion] Three.js unavailable; using SVG/GSAP fallback.',err);threeState=null;return null});
+  }
+
+  function killThree(){
+    const st=window.__properThreeScene;
+    if(!st)return;
+    try{
+      cancelAnimationFrame(st.raf);
+      st.resizeObserver?.disconnect?.();
+      st.scene.traverse(o=>{
+        o.geometry?.dispose?.();
+        if(o.material){
+          const mats=Array.isArray(o.material)?o.material:[o.material];
+          mats.forEach(m=>m.dispose?.());
+        }
+      });
+      st.renderer.dispose();
+      st.renderer.forceContextLoss?.();
+      st.canvas.remove();
+    }catch(_){ }
+    window.__properThreeScene=null;
+  }
+
+  function buildHUD(hero,id,info){
+    if(!hero)return;
+    qsa('.aspect-motion-hud,.aspect-motion-badge',hero).forEach(n=>n.remove());
+    const bg=qs('.aspect-hero-bg',hero);
+    if(!bg)return;
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('class','aspect-motion-hud');
+    svg.setAttribute('viewBox','0 0 960 260');
+    svg.setAttribute('preserveAspectRatio','none');
+    svg.innerHTML=`
+      <defs>
+        <path id="properArc-${id}" d="M610,58 C730,18 860,30 930,98" fill="none"/>
+      </defs>
+      <circle class="hud-ring" cx="720" cy="131" r="78"></circle>
+      <circle class="hud-ring strong" cx="720" cy="131" r="102"></circle>
+      <circle class="hud-ring" cx="720" cy="131" r="126"></circle>
+      <path class="hud-line" d="M540 40 L850 230 M560 225 L900 52"></path>
+      <circle class="hud-dot" cx="642" cy="86" r="2.8"></circle>
+      <circle class="hud-dot" cx="812" cy="176" r="2.3"></circle>
+      <text class="hud-label"><textPath href="#properArc-${id}" startOffset="0%">PROPER • ${info.code} • TECHNICAL COMPLIANCE • CONTROL</textPath></text>
+    `;
+    bg.appendChild(svg);
+
+    const badge=document.createElement('div');
+    badge.className='aspect-motion-badge';
+    badge.innerHTML='<i></i><span>VISUAL CONTROL ACTIVE</span>';
+    hero.appendChild(badge);
+
+    if(window.gsap && !REDUCED){
+      const rings=qsa('.hud-ring',svg);
+      window.gsap.fromTo(rings,{scale:.88,opacity:0,rotation:-8},{scale:1,opacity:'-=0',rotation:8,duration:1.2,ease:'power3.out',stagger:.09});
+      window.gsap.to(rings[0],{rotation:360,duration:22,ease:'none',repeat:-1,transformOrigin:'50% 50%'});
+      window.gsap.to(rings[1],{rotation:-360,duration:30,ease:'none',repeat:-1,transformOrigin:'50% 50%'});
+      window.gsap.to(svg.querySelector('.hud-dot'),{r:4.8,opacity:.08,duration:1.5,ease:'sine.inOut',repeat:-1,yoyo:true});
+      window.gsap.fromTo(svg.querySelector('.hud-label'),{opacity:0},{opacity:.38,duration:.8,delay:.6,ease:'power2.out'});
+    }
+  }
+
+  function mountThree(hero,id,info){
+    killThree();
+    if(REDUCED)return;
+    const bg=qs('.aspect-hero-bg',hero); if(!bg)return;
+    loadThree().then(THREE=>{
+      if(!THREE || !hero.classList.contains('aspect-hero') || !hero.closest('.page')?.classList.contains('active'))return;
+      const canvas=document.createElement('canvas');
+      canvas.className='aspect-motion-canvas';
+      bg.appendChild(canvas);
+      const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'low-power'});
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+      renderer.setClearColor(0x000000,0);
+      const scene=new THREE.Scene();
+      const camera=new THREE.PerspectiveCamera(38,1,.1,100);
+      camera.position.set(0,0,6.3);
+      const group=new THREE.Group();
+      scene.add(group);
+
+      const color=new THREE.Color(info.accent);
+      const particleCount=115;
+      const positions=new Float32Array(particleCount*3);
+      for(let i=0;i<particleCount;i++){
+        const r=1.25 + Math.random()*1.35;
+        const theta=Math.random()*Math.PI*2;
+        const phi=Math.acos(2*Math.random()-1);
+        positions[i*3]=r*Math.sin(phi)*Math.cos(theta);
+        positions[i*3+1]=r*Math.cos(phi)*.82;
+        positions[i*3+2]=r*Math.sin(phi)*Math.sin(theta);
+      }
+      const geo=new THREE.BufferGeometry();
+      geo.setAttribute('position',new THREE.BufferAttribute(positions,3));
+      const mat=new THREE.PointsMaterial({color,size:.055,transparent:true,opacity:.55,depthWrite:false,blending:THREE.AdditiveBlending});
+      const points=new THREE.Points(geo,mat);
+      group.add(points);
+
+      const orbGeo=new THREE.IcosahedronGeometry(1.03,2);
+      const orbMat=new THREE.MeshBasicMaterial({color,wireframe:true,transparent:true,opacity:.10});
+      const orb=new THREE.Mesh(orbGeo,orbMat);
+      group.add(orb);
+
+      const ringGeo=new THREE.TorusGeometry(1.42,.012,8,120);
+      const ringMat=new THREE.MeshBasicMaterial({color,transparent:true,opacity:.20});
+      const ring=new THREE.Mesh(ringGeo,ringMat);
+      ring.rotation.x=.95;
+      group.add(ring);
+
+      const ring2=ring.clone();
+      ring2.scale.setScalar(.82);ring2.rotation.x=-.62;ring2.rotation.y=.45;ring2.material=ringMat.clone();ring2.material.opacity=.12;
+      group.add(ring2);
+
+      function resize(){
+        const rect=bg.getBoundingClientRect();
+        const w=Math.max(10,rect.width),h=Math.max(10,rect.height);
+        renderer.setSize(w,h,false);
+        camera.aspect=w/h;camera.updateProjectionMatrix();
+      }
+      resize();
+      const resizeObserver=new ResizeObserver(resize);resizeObserver.observe(bg);
+      let t=0;
+      const tick=()=>{
+        if(!document.body.contains(canvas)){killThree();return;}
+        t+=.008;
+        const active=hero.closest('.page')?.classList.contains('active');
+        canvas.style.opacity=active?'.82':'0';
+        group.rotation.y=t*.18;
+        group.rotation.x=Math.sin(t*.6)*.04;
+        points.rotation.z=t*.05;
+        ring.rotation.z=t*.16;
+        ring2.rotation.z=-t*.12;
+        const rect=hero.getBoundingClientRect();
+        const cx=(window.innerWidth/2-(rect.left+rect.width/2))/Math.max(1,rect.width);
+        const cy=(window.innerHeight/2-(rect.top+rect.height/2))/Math.max(1,rect.height);
+        camera.position.x += (cx*.45-camera.position.x)*.03;
+        camera.position.y += (-cy*.25-camera.position.y)*.03;
+        camera.lookAt(0,0,0);
+        renderer.render(scene,camera);
+        window.__properThreeScene.raf=requestAnimationFrame(tick);
+      };
+      window.__properThreeScene={scene,renderer,canvas,resizeObserver,raf:requestAnimationFrame(tick)};
+    });
+  }
+
+  function aspectHeroAnimate(id){
+    const page=document.getElementById(id), hero=qs('.aspect-hero',page), info=ASPECTS[id];
+    if(!page||!hero||!info)return;
+    setVar(page,'--hero-accent',info.accent);setVar(page,'--hero-soft',info.soft);
+    buildHUD(hero,id,info);
+    if(window.gsap && !REDUCED){
+      window.gsap.killTweensOf([hero,hero.querySelector('.aspect-hero-mark'),hero.querySelector('.aspect-motion-badge'),...hero.querySelectorAll('.aspect-kicker,.aspect-hero h1,.aspect-hero p')]);
+      const tl=window.gsap.timeline({defaults:{ease:'power3.out'}});
+      tl.fromTo(hero,{opacity:.55,y:12},{opacity:1,y:0,duration:.5})
+        .fromTo(hero.querySelector('.aspect-hero-mark'),{scale:.82,rotate:-4,opacity:0},{scale:1,rotate:0,opacity:1,duration:.7},'-=.25')
+        .fromTo(hero.querySelectorAll('.aspect-kicker,.aspect-hero h1,.aspect-hero p'),{y:15,opacity:0},{y:0,opacity:1,duration:.65,stagger:.08},'-=.35')
+        .fromTo(hero.querySelector('.aspect-motion-badge'),{x:18,opacity:0},{x:0,opacity:1,duration:.5},'-=.35');
+      const mark=hero.querySelector('.aspect-hero-mark');
+      if(mark){window.gsap.to(mark,{y:-4,rotationY:2,duration:3.8,ease:'sine.inOut',repeat:-1,yoyo:true})}
+    }
+    mountThree(hero,id,info);
+  }
+
+  function refreshActiveAspect(){
+    const active=qs('.page.active.aspect-modern');
+    if(active) aspectHeroAnimate(active.id); else killThree();
+  }
+
+  function dashboardMotion(){
+    const page=qs('#dashboard'); if(!page)return;
+    const cards=qsa('.portal-module.aspect-launch-card',page);
+    if(window.gsap && !REDUCED){
+      window.gsap.killTweensOf(cards);
+      window.gsap.killTweensOf(cards.map(c=>qs('.dashboard-aspect-symbol',c)).filter(Boolean));
+      window.gsap.fromTo(cards,{y:20,opacity:0,scale:.985},{y:0,opacity:1,scale:1,duration:.65,ease:'power3.out',stagger:.07,clearProps:'transform'});
+      const section=qs('.portal-section-title',page);
+      if(section)window.gsap.fromTo(section,{y:12,opacity:0},{y:0,opacity:1,duration:.55,ease:'power3.out'});
+    }else{
+      cards.forEach(c=>c.classList.add('motion-ready'));
+    }
+    cards.forEach(card=>{
+      if(card.dataset.motionBound==='1')return;
+      card.dataset.motionBound='1';
+      const icon=qs('.dashboard-aspect-symbol',card);
+      card.addEventListener('pointermove',e=>{
+        if(REDUCED || window.matchMedia('(max-width: 900px)').matches)return;
+        const r=card.getBoundingClientRect();
+        const px=(e.clientX-r.left)/r.width, py=(e.clientY-r.top)/r.height;
+        card.style.setProperty('--mx',(px*100).toFixed(1)+'%');card.style.setProperty('--my',(py*100).toFixed(1)+'%');
+        if(window.gsap){
+          window.gsap.to(card,{rotateY:(px-.5)*4,rotateX:(.5-py)*3,duration:.35,ease:'power2.out',transformPerspective:900});
+          if(icon)window.gsap.to(icon,{x:(px-.5)*3,y:(py-.5)*-3,duration:.35,ease:'power2.out'});
+        }
+      });
+      card.addEventListener('pointerleave',()=>{
+        if(window.gsap){window.gsap.to(card,{rotateY:0,rotateX:0,duration:.55,ease:'elastic.out(1,.55)'});if(icon)window.gsap.to(icon,{x:0,y:0,duration:.45,ease:'power2.out'});}
+      });
+      card.addEventListener('mouseenter',()=>{
+        if(!window.gsap||REDUCED)return;
+        qsa('svg path',card).forEach((p,i)=>window.gsap.fromTo(p,{strokeDashoffset:90},{strokeDashoffset:0,duration:.45,ease:'power2.out',delay:i*.025}));
+      });
+    });
+  }
+
+  function magneticControls(){
+    if(REDUCED)return;
+    qsa('.btn.primary,.portal-round,.portal-text-btn,.aspect-hero-action .btn').forEach(el=>{
+      if(el.dataset.magnetic==='1')return;el.dataset.magnetic='1';
+      el.addEventListener('pointermove',e=>{
+        if(window.matchMedia('(max-width:900px)').matches)return;
+        const r=el.getBoundingClientRect();const x=(e.clientX-(r.left+r.width/2))/r.width;const y=(e.clientY-(r.top+r.height/2))/r.height;
+        if(window.gsap)window.gsap.to(el,{x:x*5,y:y*4,duration:.25,ease:'power2.out'});
+      });
+      el.addEventListener('pointerleave',()=>{if(window.gsap)window.gsap.to(el,{x:0,y:0,duration:.45,ease:'elastic.out(1,.55)'})});
+    });
+  }
+
+  function panelReveal(){
+    const els=qsa('.portal-panel,.exec-kpi,.card,.aspect-kpi-row');
+    if(window.gsap && window.ScrollTrigger && !REDUCED){
+      window.gsap.registerPlugin(window.ScrollTrigger);
+      els.forEach((el,i)=>{
+        if(el.dataset.revealBound==='1')return;el.dataset.revealBound='1';
+        window.gsap.fromTo(el,{y:18,opacity:0},{y:0,opacity:1,duration:.6,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true},delay:(i%4)*.02});
+      });
+    }else if(!REDUCED){
+      const io=new IntersectionObserver(entries=>entries.forEach(x=>{if(x.isIntersecting){x.target.classList.add('motion-ready');io.unobserve(x.target)}}),{threshold:.08});
+      els.forEach(el=>{if(!el.classList.contains('motion-ready')){el.classList.add('motion-reveal');io.observe(el)}});
+    }
+  }
+
+  function patchShowPage(){
+    if(booted || typeof window.showPage!=='function')return;
+    originalShowPage=window.showPage;
+    window.showPage=function(id){
+      const r=originalShowPage.apply(this,arguments);
+      requestAnimationFrame(()=>{
+        try{
+          if(id==='dashboard'){killThree();dashboardMotion()}
+          else if(ASPECTS[id])aspectHeroAnimate(id);
+          else killThree();
+          panelReveal();magneticControls();
+        }catch(err){console.warn('[PROPER motion]',err)}
+      });
+      return r;
+    };
+    booted=true;
+  }
+
+  function boot(){
+    patchShowPage();
+    dashboardMotion();
+    panelReveal();
+    magneticControls();
+    refreshActiveAspect();
+
+    // Lightweight pointer parallax for large heroes.
+    if(!REDUCED){
+      qsa('.aspect-hero').forEach(hero=>{
+        if(hero.dataset.parallaxBound==='1')return; hero.dataset.parallaxBound='1';
+        hero.addEventListener('pointermove',e=>{
+          if(window.matchMedia('(max-width:900px)').matches || !hero.closest('.page')?.classList.contains('active'))return;
+          const r=hero.getBoundingClientRect();const px=(e.clientX-r.left)/r.width-.5;const py=(e.clientY-r.top)/r.height-.5;
+          const copy=qs('.aspect-hero-copy',hero),mark=qs('.aspect-hero-mark',hero);
+          if(window.gsap){window.gsap.to(copy,{x:px*5,y:py*3,duration:.55,ease:'power2.out'});window.gsap.to(mark,{x:px*-5,y:py*-3,duration:.6,ease:'power2.out'});}
+        });
+        hero.addEventListener('pointerleave',()=>{if(window.gsap){window.gsap.to(qs('.aspect-hero-copy',hero),{x:0,y:0,duration:.6,ease:'power3.out'});window.gsap.to(qs('.aspect-hero-mark',hero),{x:0,y:0,duration:.65,ease:'power3.out'})}});
+      });
+    }
+  }
+
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+  window.addEventListener('load',()=>{patchShowPage();dashboardMotion();panelReveal();magneticControls();refreshActiveAspect()});
 })();
 </script>
 
