@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Inspeksi Ketentuan Teknis PROPER</title>
-<meta name="aspect-image-sources" content="PPA: Wikimedia Commons – Gresham Wastewater Treatment Plant aeration basins 2025; PPU: Wikimedia Commons – Factory Chimney Smoke; PLB3: Wikimedia Commons – Bodega de Residuos Peligrosos de Gemapro.cl; Tanggap Darurat: Wikimedia Commons – Firefighter training; B3: Wikimedia Commons – Laboratory chemicals; PLnonB3: Unsplash – Aerial view of recycling plant with green trees; Sampah: Wikimedia Commons – Waste sorting bins">
-
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
@@ -1509,7 +1507,6 @@ body{background:#f3f6f4!important}
 .aspect-nav-copy b{letter-spacing:.01em}.aspect-nav-copy small{font-size:8px!important}
 
 .portal-module.aspect-launch-card{min-height:176px!important;padding:88px 42px 15px 16px!important;overflow:hidden!important;border:1px solid rgba(10,45,33,.10)!important;border-top:0!important;background:#fff!important;isolation:isolate;position:relative;transform:translateZ(0);box-shadow:0 5px 16px rgba(6,35,26,.065)!important;transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease,border-color .28s ease!important}
-.portal-module.aspect-launch-card:before{content:""!important;position:absolute!important;left:0!important;right:0!important;top:0!important;width:auto!important;height:84px!important;margin:0!important;border-radius:0!important;border:0!important;background-image:linear-gradient(180deg,rgba(4,32,25,.03),rgba(4,32,25,.60)),var(--aspect-img)!important;background-size:cover!important;background-position:center!important;z-index:-2!important;transform:scale(1.02);transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .4s ease!important}
 .portal-module.aspect-launch-card:after{content:"";position:absolute;left:0;right:0;top:0;height:84px;z-index:-1;background:linear-gradient(110deg,var(--aspect-wash),transparent 72%);pointer-events:none}
 .portal-module.aspect-launch-card strong,.portal-module.aspect-launch-card span{position:relative;z-index:2}
 .portal-module.aspect-launch-card strong{font-size:14px!important;font-weight:800!important;color:#10251e!important;line-height:1.2!important}
@@ -1518,13 +1515,6 @@ body{background:#f3f6f4!important}
 .portal-module.aspect-launch-card:hover{transform:translateY(-5px)!important;box-shadow:0 18px 34px rgba(6,35,26,.12),0 0 0 1px var(--m)!important}
 .portal-module.aspect-launch-card:hover:before{transform:scale(1.08);filter:saturate(1.08)}
 .portal-module.aspect-launch-card:hover i{background:var(--m)!important;color:#fff!important;transform:translateX(2px)!important}
-.portal-module.aspect-launch-card[data-aspect="ppa"]{--aspect-img:url("https://upload.wikimedia.org/wikipedia/commons/b/bc/Gresham_Wastewater_Treatment_Plant_aeration_basins_2025.jpg");--aspect-wash:rgba(10,126,88,.24)}
-.portal-module.aspect-launch-card[data-aspect="emisi"]{--aspect-img:url("https://commons.wikimedia.org/wiki/Special:FilePath/Factory_Chimney_Smoke_%28Unsplash%29.jpg?width=1800");--aspect-wash:rgba(45,103,209,.22)}
-.portal-module.aspect-launch-card[data-aspect="plb3"]{--aspect-img:url("https://upload.wikimedia.org/wikipedia/commons/d/d9/Bodega_de_Residuos_Peligrosos_de_Gemapro.cl.jpg");--aspect-wash:rgba(0,130,164,.22)}
-.portal-module.aspect-launch-card[data-aspect="plb3darurat"]{--aspect-img:url("https://upload.wikimedia.org/wikipedia/commons/d/dc/Firefighter_training_%2816835635079%29.jpg");--aspect-wash:rgba(222,112,24,.22)}
-.portal-module.aspect-launch-card[data-aspect="plnonb3"]{--aspect-img:url("https://images.unsplash.com/photo-1775673301865-11860d27573c?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=82&w=1800");--aspect-wash:rgba(35,150,100,.22)}
-.portal-module.aspect-launch-card[data-aspect="b3"]{--aspect-img:url("https://upload.wikimedia.org/wikipedia/commons/2/26/Laboratory_chemicals.jpg");--aspect-wash:rgba(104,76,181,.22)}
-.portal-module.aspect-launch-card[data-aspect="sampah"]{--aspect-img:url("https://upload.wikimedia.org/wikipedia/commons/7/78/Waste_sorting_bins.jpg");--aspect-wash:rgba(191,141,18,.22)}
 .portal-section-title + .portal-module-grid .aspect-launch-card{animation:cardFloat 8s ease-in-out infinite}
 .portal-section-title + .portal-module-grid .aspect-launch-card:nth-child(2){animation-delay:.25s}.portal-section-title + .portal-module-grid .aspect-launch-card:nth-child(3){animation-delay:.5s}.portal-section-title + .portal-module-grid .aspect-launch-card:nth-child(4){animation-delay:.75s}.portal-section-title + .portal-module-grid .aspect-launch-card:nth-child(5){animation-delay:1s}.portal-section-title + .portal-module-grid .aspect-launch-card:nth-child(6){animation-delay:1.25s}.portal-section-title + .portal-module-grid .aspect-launch-card:nth-child(7){animation-delay:1.5s}
 @keyframes cardFloat{0%,100%{translate:0 0}50%{translate:0 -2px}}
@@ -1534,45 +1524,99 @@ body{background:#f3f6f4!important}
 @media(prefers-reduced-motion:reduce){.aspect-symbol:after,.portal-module.aspect-launch-card{animation:none!important}.portal-module.aspect-launch-card:hover{transform:none!important}}
 </style>
 
-<style id="proper-aspect-hero-motion-v5">
-/* External-image hero enhancement: sharper image treatment, subtle motion, and robust fallback. */
-.aspect-hero{isolation:isolate;}
-.aspect-hero-bg{background:#e9f1ed;}
-.aspect-hero-bg img{transform:scale(1.025);transition:transform 9s cubic-bezier(.2,.6,.2,1),filter .35s ease,opacity .35s ease;will-change:transform;}
-.aspect-hero:hover .aspect-hero-bg img{transform:scale(1.065);filter:saturate(1.04) contrast(1.02);}
-.aspect-hero:after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:16px;background:linear-gradient(90deg,rgba(255,255,255,0) 55%,rgba(9,76,53,.045) 100%);z-index:1;}
-.aspect-hero-mark{z-index:3!important;}
-.aspect-hero-copy{z-index:3!important;}
-.aspect-hero-action{z-index:4!important;}
-.aspect-kicker{position:relative;display:inline-flex;align-items:center;gap:7px;}
-.aspect-kicker:before{content:"";width:22px;height:2px;border-radius:2px;background:var(--aspect-accent,#0b8a65);display:inline-block;}
-.portal-module.aspect-launch-card:before{background-image:linear-gradient(180deg,rgba(4,32,25,.04),rgba(4,32,25,.62)),var(--aspect-img)!important;}
-.portal-module.aspect-launch-card:before{background-position:center 42%;}
-.portal-module.aspect-launch-card:hover:before{background-position:center 48%;}
-@media(prefers-reduced-motion:reduce){.aspect-hero-bg img,.portal-module.aspect-launch-card:before{transition:none!important;transform:none!important}}
+<style id="proper-symbol-only-final">
+/* FINAL — aspect visuals are symbol-only. No remote aspect imagery. */
+.aspect-symbol-card{grid-template-columns:42px minmax(0,1fr)!important;min-height:56px!important;padding:6px!important}
+.aspect-symbol{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#fff;flex:0 0 auto;position:relative;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 6px 14px rgba(0,0,0,.14);transition:transform .2s ease,box-shadow .2s ease}
+.aspect-symbol:after{content:"";position:absolute;inset:-60%;background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.22) 50%,transparent 62%);transform:translateX(-65%);animation:symbolSheen 5s ease-in-out infinite}
+@keyframes symbolSheen{0%,70%,100%{transform:translateX(-70%)}85%{transform:translateX(70%)}}
+.aspect-symbol svg{width:21px;height:21px;position:relative;z-index:2}
+.symbol-ppa{background:linear-gradient(145deg,#159a70,#087052)}
+.symbol-emisi{background:linear-gradient(145deg,#3479df,#235bb0)}
+.symbol-plb3{background:linear-gradient(145deg,#159ab5,#11778d)}
+.symbol-darurat{background:linear-gradient(145deg,#ee8b2b,#c75d0d)}
+.symbol-plnonb3{background:linear-gradient(145deg,#54b991,#18815f)}
+.symbol-b3{background:linear-gradient(145deg,#8d70d9,#6241ae)}
+.symbol-sampah{background:linear-gradient(145deg,#d19a18,#a66f04)}
+
+/* dashboard aspect cards */
+.portal-module.aspect-launch-card{
+  min-height:164px!important;padding:0 16px 15px!important;overflow:hidden!important;
+  border:1px solid rgba(10,45,33,.10)!important;border-top:0!important;background:#fff!important;
+  isolation:isolate;position:relative;transform:translateZ(0);
+  box-shadow:0 5px 16px rgba(6,35,26,.065)!important;
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease,border-color .28s ease!important;
+}
+.portal-module.aspect-launch-card:before{
+  content:""!important;position:relative!important;display:block!important;left:auto!important;right:auto!important;top:auto!important;
+  width:calc(100% + 32px)!important;height:82px!important;margin-left:-16px!important;border-radius:0!important;border:0!important;
+  background:linear-gradient(135deg,var(--aspect-soft),var(--aspect-soft-2))!important;z-index:-1!important;transform:none!important;
+  transition:filter .35s ease,opacity .35s ease!important;
+}
+.portal-module.aspect-launch-card:after{
+  content:"";position:absolute;left:0;right:0;top:0;height:82px;z-index:0;
+  background:radial-gradient(circle at 86% 30%,rgba(255,255,255,.38),transparent 20%),linear-gradient(100deg,rgba(255,255,255,.05),transparent 68%);
+  pointer-events:none;
+}
+.portal-module.aspect-launch-card .dashboard-aspect-symbol{
+  position:absolute!important;top:18px;left:16px;width:48px;height:48px;border-radius:14px;
+  display:grid;place-items:center;color:#fff;z-index:2;box-shadow:0 10px 20px rgba(6,35,26,.16),inset 0 0 0 1px rgba(255,255,255,.18);
+  transition:transform .3s ease,box-shadow .3s ease!important;
+}
+.dashboard-aspect-symbol svg{width:25px;height:25px}
+.portal-module.aspect-launch-card strong,.portal-module.aspect-launch-card span{position:relative;z-index:2}
+.portal-module.aspect-launch-card strong{display:block!important;margin-top:12px!important;font-size:14px!important;font-weight:800!important;color:#10251e!important;line-height:1.2!important}
+.portal-module.aspect-launch-card span{margin-top:4px;font-size:9.5px!important;line-height:1.35!important;color:#66786f!important}
+.portal-module.aspect-launch-card i{width:30px!important;height:30px!important;border-radius:10px!important;display:grid!important;place-items:center!important;right:12px!important;top:auto!important;bottom:12px!important;transform:none!important;background:#f0f4f2!important;color:var(--m)!important;box-shadow:0 4px 12px rgba(6,35,26,.08);font-size:15px!important;z-index:3}
+.portal-module.aspect-launch-card:hover{transform:translateY(-5px)!important;box-shadow:0 18px 34px rgba(6,35,26,.12),0 0 0 1px var(--m)!important}
+.portal-module.aspect-launch-card:hover .dashboard-aspect-symbol{transform:translateY(-2px) scale(1.05)!important;box-shadow:0 14px 25px rgba(6,35,26,.20),inset 0 0 0 1px rgba(255,255,255,.2)!important}
+.portal-module.aspect-launch-card:hover:before{filter:saturate(1.08) brightness(1.02)}
+.portal-module.aspect-launch-card:hover i{background:var(--m)!important;color:#fff!important;transform:translateX(2px)!important}
+
+/* Aspect page hero — no image, only a large contextual symbol. */
+.page.aspect-modern .aspect-hero{
+  position:relative;display:grid;grid-template-columns:118px minmax(0,1fr);align-items:center;gap:22px;
+  min-height:174px;padding:18px 20px;border:1px solid var(--corp-line);border-radius:16px;overflow:hidden;
+  background:linear-gradient(135deg,#fff 0%,var(--aspect-soft,#e9f5ef) 100%);box-shadow:0 8px 24px rgba(6,35,26,.055);isolation:isolate;
+}
+.page.aspect-modern .aspect-hero:after{
+  content:"";position:absolute;right:-50px;top:-60px;width:250px;height:250px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.6),transparent 70%);z-index:-1;
+}
+.page.aspect-modern .aspect-hero-mark{
+  width:108px;height:108px;border-radius:28px;display:grid;place-items:center;color:#fff;
+  box-shadow:0 16px 30px rgba(6,35,26,.16),inset 0 0 0 1px rgba(255,255,255,.2);position:relative;overflow:hidden;
+}
+.page.aspect-modern .aspect-hero-mark:after{content:"";position:absolute;inset:-70%;background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.2) 50%,transparent 62%);animation:symbolSheen 5s ease-in-out infinite}
+.page.aspect-modern .aspect-hero-mark svg{width:58px;height:58px;position:relative;z-index:2}
+.page.aspect-modern .aspect-hero-mark.logo-mark{padding:0;background:linear-gradient(145deg,#54b991,#18815f)}
+.page.aspect-modern .aspect-hero-mark.logo-mark svg{width:58px;height:58px}
+.page.aspect-modern .aspect-hero-copy{padding-right:40px}
+.page.aspect-modern .aspect-kicker{font-size:8.5px;font-weight:800;letter-spacing:.12em;color:var(--aspect-accent,#0b7654);text-transform:uppercase;margin-bottom:6px}
+.page.aspect-modern .aspect-hero h1{font-size:26px;line-height:1.08;margin:0;color:#10251e;font-weight:800;letter-spacing:-.04em}
+.page.aspect-modern .aspect-hero p{font-size:11px;line-height:1.55;color:#60736b;max-width:720px;margin:8px 0 0}
+.page.aspect-modern .aspect-hero-bg{position:absolute;right:0;top:0;width:32%;height:100%;opacity:0;pointer-events:none;display:none!important}
+.page.aspect-modern .aspect-hero-action{position:absolute;right:18px;bottom:16px;z-index:4}
+.page.aspect-modern .aspect-hero-action .btn{border:1px solid rgba(16,37,30,.12);color:#29453a;padding:8px 12px;background:#fff;box-shadow:0 3px 10px rgba(0,0,0,.07)}
+.page.aspect-modern[data-aspect="ppa"]{--aspect-accent:#0a7c58;--aspect-soft:#e5f6ee}
+.page.aspect-modern[data-aspect="emisi"]{--aspect-accent:#2f6fe0;--aspect-soft:#e8f0fe}
+.page.aspect-modern[data-aspect="plb3"]{--aspect-accent:#0a8faa;--aspect-soft:#e5f7fa}
+.page.aspect-modern[data-aspect="plb3darurat"]{--aspect-accent:#e07a1f;--aspect-soft:#fff0df}
+.page.aspect-modern[data-aspect="plnonb3"]{--aspect-accent:#18815f;--aspect-soft:#e8f7f0}
+.page.aspect-modern[data-aspect="b3"]{--aspect-accent:#6f52c9;--aspect-soft:#eee9fb}
+.page.aspect-modern[data-aspect="sampah"]{--aspect-accent:#b97808;--aspect-soft:#fff2df}
+@media(max-width:720px){
+  .page.aspect-modern .aspect-hero{grid-template-columns:82px 1fr;gap:12px;min-height:150px;padding:14px}
+  .page.aspect-modern .aspect-hero-mark{width:74px;height:74px;border-radius:20px}
+  .page.aspect-modern .aspect-hero-mark svg{width:40px;height:40px}
+  .page.aspect-modern .aspect-hero h1{font-size:20px}
+  .page.aspect-modern .aspect-hero p{font-size:9.7px}
+  .page.aspect-modern .aspect-hero-copy{padding-right:0}
+  .portal-module.aspect-launch-card{min-height:156px!important}
+}
+@media(prefers-reduced-motion:reduce){.aspect-symbol:after,.page.aspect-modern .aspect-hero-mark:after{animation:none!important}}
 </style>
 
-<style id="proper-aspect-photo-polish-v6">
-/* Corporate photo treatment: strong aspect-specific imagery without heavy template effects. */
-.portal-module.aspect-launch-card{min-height:188px!important;padding-top:96px!important;}
-.portal-module.aspect-launch-card:before{height:94px!important;background-size:cover!important;background-position:center 46%!important;}
-.portal-module.aspect-launch-card:after{height:94px!important;background:linear-gradient(100deg,var(--aspect-wash),rgba(4,32,25,.02) 72%)!important;}
-.portal-module.aspect-launch-card strong{letter-spacing:-.01em!important;}
-.portal-module.aspect-launch-card span{max-width:88%!important;}
-.aspect-hero-mark{box-shadow:0 12px 28px rgba(10,45,33,.10)!important;}
-.aspect-hero-bg img{opacity:.92!important;}
-@media(max-width:900px){.portal-module.aspect-launch-card{min-height:176px!important;padding-top:90px!important}.portal-module.aspect-launch-card:before,.portal-module.aspect-launch-card:after{height:88px!important}}
-@media(max-width:620px){.portal-module.aspect-launch-card{min-height:166px!important;padding-top:84px!important}.portal-module.aspect-launch-card:before,.portal-module.aspect-launch-card:after{height:82px!important}}
-</style>
-
-<style id="proper-aspect-hero-motion-v7">
-.aspect-hero-bg img{animation:properHeroPan 14s ease-in-out infinite alternate;transform-origin:center center;}
-@keyframes properHeroPan{0%{transform:scale(1.025) translate3d(0,0,0)}100%{transform:scale(1.06) translate3d(-1.5%,-1%,0)}}
-.portal-module.aspect-launch-card:before{animation:properCardPan 12s ease-in-out infinite alternate;}
-@keyframes properCardPan{0%{background-position:center 44%;transform:scale(1.02)}100%{background-position:center 49%;transform:scale(1.055)}}
-.portal-module.aspect-launch-card:hover:before{animation-play-state:paused;}
-@media(prefers-reduced-motion:reduce){.aspect-hero-bg img,.portal-module.aspect-launch-card:before{animation:none!important;transform:none!important}}
-</style>
 </head>
 <body>
 <datalist id="ppaLocationSuggestions"></datalist>
@@ -1715,23 +1759,23 @@ body{background:#f3f6f4!important}
 
   <div class="portal-module-grid">
     <button class="portal-module aspect-launch-card portal-green" data-aspect="ppa" onclick="showPage('ppa')">
-      <strong>ASPEK PPA</strong><span>PENGENDALIAN PENCEMARAN AIR</span><i>→</i>
+      <span class="dashboard-aspect-symbol symbol-ppa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3s6 6.3 6 10.3A6 6 0 0 1 6 13.3C6 9.3 12 3 12 3Z"/><path d="M9 14.5c1.5 1.2 3.5 1.4 5.2.6"/></svg></span><strong>ASPEK PPA</strong><span>PENGENDALIAN PENCEMARAN AIR</span><i>→</i>
     </button>
     <button class="portal-module aspect-launch-card portal-blue" data-aspect="emisi" onclick="showPage('emisi')">
-      <strong>ASPEK PPU</strong><span>PENGENDALIAN PENCEMARAN UDARA &amp; EMISI</span><i>→</i>
+      <span class="dashboard-aspect-symbol symbol-emisi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M6 19v-7h4v7M14 19V7h4v12"/><path d="M8 5c.8-1.2 2.2-1.2 3 0M15 3c.8-1.2 2.2-1.2 3 0"/></svg></span><strong>ASPEK PPU</strong><span>PENGENDALIAN PENCEMARAN UDARA &amp; EMISI</span><i>→</i>
     </button>
     <button class="portal-module aspect-launch-card portal-cyan" data-aspect="plb3" onclick="showPage('plb3')">
-      <strong>ASPEK PENYIMPANAN PLB3</strong><span>PENGELOLAAN PENYIMPANAN LIMBAH B3</span><i>→</i>
+      <span class="dashboard-aspect-symbol symbol-plb3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 7h14M7 4h10v16H7z"/><path d="M9 10h6M9 14h6M9 18h3"/><path d="M4 7h16"/></svg></span><strong>ASPEK PENYIMPANAN PLB3</strong><span>PENGELOLAAN PENYIMPANAN LIMBAH B3</span><i>→</i>
     </button>
     <button class="portal-module aspect-launch-card portal-orange" data-aspect="plb3darurat" onclick="showPage('plb3darurat')">
-      <strong>ASPEK SISTEM TANGGAP DARURAT PLB3</strong><span>PROGRAM &amp; KESIAPSIAGAAN DARURAT</span><i>→</i>
+      <span class="dashboard-aspect-symbol symbol-plb3darurat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 21 20H3L12 3Z"/><path d="M12 9v5M12 17h.01"/></svg></span><strong>ASPEK SISTEM TANGGAP DARURAT PLB3</strong><span>PROGRAM &amp; KESIAPSIAGAAN DARURAT</span><i>→</i>
     </button>
-    <button class="portal-module aspect-launch-card portal-navy" data-aspect="plnonb3" onclick="showPage('plnonb3')"><strong>ASPEK PLnonB3</strong><span>PENGELOLAAN LIMBAH NON-B3</span><i>→</i></button>
+    <button class="portal-module aspect-launch-card portal-navy" data-aspect="plnonb3" onclick="showPage('plnonb3')"><span class="dashboard-aspect-symbol symbol-plnonb3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 5-2 3 2 3M15 19l2-3-2-3M6 11l3 1 3-2M18 13l-3-1-3 2"/><path d="M9 8h6l3 5-3 5H9l-3-5 3-5Z"/></svg></span><strong>ASPEK PLnonB3</strong><span>PENGELOLAAN LIMBAH NON-B3</span><i>→</i></button>
     <button class="portal-module aspect-launch-card portal-yellow" data-aspect="b3" onclick="showPage('b3')">
-      <strong>ASPEK B3</strong><span>PENGELOLAAN B3 &amp; PCBs</span><i>→</i>
+      <span class="dashboard-aspect-symbol symbol-b3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v5.2L5.5 16a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8.2V3"/><path d="M7.5 14h9"/></svg></span><strong>ASPEK B3</strong><span>PENGELOLAAN B3 &amp; PCBs</span><i>→</i>
     </button>
     <button class="portal-module aspect-launch-card portal-amber" data-aspect="sampah" onclick="showPage('sampah')">
-      <strong>ASPEK SAMPAH</strong><span>PENGELOLAAN, PEMILAHAN &amp; PELAPORAN SAMPAH</span><i>→</i>
+      <span class="dashboard-aspect-symbol symbol-sampah"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/><path d="M10 10v7M14 10v7"/></svg></span><strong>ASPEK SAMPAH</strong><span>PENGELOLAAN, PEMILAHAN &amp; PELAPORAN SAMPAH</span><i>→</i>
     </button>
     <button class="portal-module portal-navy" onclick="showPage('monitoring')">
       <strong>MONITORING &amp; REKAP</strong><span>HASIL INSPEKSI SELURUH ASPEK</span><i>→</i>
@@ -8815,32 +8859,34 @@ setTimeout(()=>loadExecutiveAnalyticsV2(false),1200);
 
 <script id="proper-aspect-ui-v2-js">
 (function(){
-const ASPECT_IMAGES={"ppa":"https://upload.wikimedia.org/wikipedia/commons/b/bc/Gresham_Wastewater_Treatment_Plant_aeration_basins_2025.jpg","ppu":"https://upload.wikimedia.org/wikipedia/commons/e/e3/Factory_Chimney_Smoke_%28Unsplash%29.jpg","plb3":"https://upload.wikimedia.org/wikipedia/commons/d/d9/Bodega_de_Residuos_Peligrosos_de_Gemapro.cl.jpg","darurat":"https://upload.wikimedia.org/wikipedia/commons/d/dc/Firefighter_training_%2816835635079%29.jpg","b3":"https://upload.wikimedia.org/wikipedia/commons/2/26/Laboratory_chemicals.jpg","plnonb3":"https://images.unsplash.com/photo-1775673301865-11860d27573c?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=82&w=1800","sampah":"https://upload.wikimedia.org/wikipedia/commons/7/78/Waste_sorting_bins.jpg"};const ASPECT_CONFIG={"ppa":{"title":"Pengendalian Pencemaran Air (PPA)","desc":"Checklist inspeksi untuk memastikan fasilitas pengendalian pencemaran air memenuhi ketentuan teknis dan kondisi lapangan sesuai ruang lingkup pemeriksaan.","count":12,"image":"ppa","reload":"loadPPAHistory"},"emisi":{"title":"Pengendalian Pencemaran Udara (PPU)","desc":"Checklist inspeksi untuk memastikan fasilitas dan kondisi sumber emisi memenuhi ketentuan teknis pengendalian pencemaran udara.","count":6,"image":"ppu","reload":"loadEmisi"},"plb3":{"title":"Pengelolaan Limbah B3 (PLB3)","desc":"Checklist inspeksi untuk memastikan fasilitas penyimpanan Limbah B3 memenuhi persyaratan teknis, keselamatan, dan pengelolaan yang ditetapkan.","count":30,"image":"plb3","reload":"loadPLB3"},"plb3darurat":{"title":"Kesiapsiagaan dan Tanggap Darurat PLB3","desc":"Checklist inspeksi untuk memastikan kesiapsiagaan organisasi, fasilitas, prosedur, pelatihan, dan peralatan dalam menghadapi keadaan darurat PLB3.","count":21,"image":"darurat","reload":"loadPLB3Darurat"},"b3":{"title":"Pengelolaan B3 dan PCBs","desc":"Checklist inspeksi untuk memastikan pengelolaan B3 dan PCBs memenuhi ketentuan teknis pada ruang lingkup pemeriksaan.","count":30,"image":"b3","reload":"loadB3"},"plnonb3":{"title":"Pengelolaan Limbah Non-B3","desc":"Checklist inspeksi untuk memastikan fasilitas penyimpanan dan pengelolaan Limbah Non-B3 memenuhi ketentuan master dan kondisi lapangan.","count":20,"image":"plnonb3","reload":"loadPLNonB3"},"sampah":{"title":"Pengelolaan Sampah","desc":"Checklist inspeksi untuk memastikan pengurangan, pemilahan, penanganan, dan pengelolaan sampah dilakukan sesuai ketentuan yang telah ditetapkan.","count":9,"image":"sampah","reload":"loadSampah"}};
-  function esc(v){return String(v??'').replace(/[&<>"']/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];});}
-  function injectPage(id){
-    const page=document.getElementById(id); if(!page||page.dataset.aspectModernReady==='1')return;
-    const c=ASPECT_CONFIG[id]; if(!c)return;
-    page.classList.add('aspect-modern'); page.dataset.aspectModernReady='1';
-    const first=page.firstElementChild;
-    const hero=document.createElement('section'); hero.className='aspect-hero';
-    const image=ASPECT_IMAGES[c.image];
-    hero.innerHTML='<div class="aspect-hero-mark '+(c.logo?'logo-mark':'')+'"><img loading="eager" decoding="async" src="'+image+'" alt="'+esc(c.title)+'" onerror="this.closest(&quot;.aspect-hero-mark&quot;).classList.add(&quot;image-fallback&quot;);this.style.display=&quot;none&quot;"></div>'+
-      '<div class="aspect-hero-copy"><div class="aspect-kicker">ASPEK PENILAIAN</div><h1>'+esc(c.title)+'</h1><p>'+esc(c.desc)+'</p></div>'+
-      '<div class="aspect-hero-bg" aria-hidden="true"><img loading="eager" decoding="async" src="'+image+'" alt="" onerror="this.style.display=&apos;none&apos;"></div>'+
-      '<div class="aspect-hero-action"><button class="btn secondary" type="button" data-aspect-refresh="'+id+'">↻ Perbarui Data</button></div>';
-    page.insertBefore(hero,first);
-    const kpi=document.createElement('section'); kpi.className='aspect-kpi-row';
-    kpi.innerHTML='<div class="aspect-kpi"><small>Total Ketentuan</small><strong data-ak="total">'+c.count+'</strong><span>ketentuan master</span></div>'+
-      '<div class="aspect-kpi good"><small>Terpenuhi (Ya)</small><strong data-ak="yes">0</strong><span data-ak-pct="yes">0%</span></div>'+
-      '<div class="aspect-kpi bad"><small>Tidak Terpenuhi</small><strong data-ak="no">0</strong><span data-ak-pct="no">0%</span></div>'+
-      '<div class="aspect-kpi blue"><small>Belum Dinilai</small><strong data-ak="blank">'+c.count+'</strong><span data-ak-pct="blank">100%</span></div>'+
-      '<div class="aspect-kpi gold"><small>Skor Kepatuhan</small><strong data-ak="score">0%</strong><span>YA ÷ '+c.count+' ketentuan</span></div>';
-    page.insertBefore(kpi,first);
-    const cards=[...page.children].filter(x=>x.classList.contains('card'));
-    if(cards[0])cards[0].classList.add('aspect-form-meta');
-    const history=cards.find(x=>/Riwayat|History/i.test(x.textContent||'')); if(history)history.classList.add('aspect-history-modern');
-    const btn=hero.querySelector('[data-aspect-refresh]'); btn.onclick=function(){const fn=window[c.reload];if(typeof fn==='function'){try{fn();}catch(e){console.warn(e);}}};
-  }
+const ASPECT_SYMBOLS={"ppa":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3s6 6.3 6 10.3A6 6 0 0 1 6 13.3C6 9.3 12 3 12 3Z"/><path d="M9 14.5c1.5 1.2 3.5 1.4 5.2.6"/></svg>`,"emisi":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M6 19v-7h4v7M14 19V7h4v12"/><path d="M8 5c.8-1.2 2.2-1.2 3 0M15 3c.8-1.2 2.2-1.2 3 0"/></svg>`,"plb3":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 7h14M7 4h10v16H7z"/><path d="M9 10h6M9 14h6M9 18h3"/><path d="M4 7h16"/></svg>`,"plb3darurat":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 21 20H3L12 3Z"/><path d="M12 9v5M12 17h.01"/></svg>`,"plnonb3":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 5-2 3 2 3M15 19l2-3-2-3M6 11l3 1 3-2M18 13l-3-1-3 2"/><path d="M9 8h6l3 5-3 5H9l-3-5 3-5Z"/></svg>`,"b3":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v5.2L5.5 16a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8.2V3"/><path d="M7.5 14h9"/></svg>`,"sampah":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/><path d="M10 10v7M14 10v7"/></svg>`};
+const ASPECT_CONFIG={
+  "ppa":{"title":"Pengendalian Pencemaran Air (PPA)","desc":"Checklist inspeksi untuk memastikan fasilitas pengendalian pencemaran air memenuhi ketentuan teknis dan kondisi lapangan sesuai ruang lingkup pemeriksaan.","count":12,"reload":"loadPPAHistory","symbol":"ppa"},
+  "emisi":{"title":"Pengendalian Pencemaran Udara (PPU)","desc":"Checklist inspeksi untuk memastikan fasilitas dan kondisi sumber emisi memenuhi ketentuan teknis pengendalian pencemaran udara.","count":6,"reload":"loadEmisi","symbol":"emisi"},
+  "plb3":{"title":"Pengelolaan Limbah B3 (PLB3)","desc":"Checklist inspeksi untuk memastikan fasilitas penyimpanan Limbah B3 memenuhi persyaratan teknis, keselamatan, dan pengelolaan yang ditetapkan.","count":30,"reload":"loadPLB3","symbol":"plb3"},
+  "plb3darurat":{"title":"Kesiapsiagaan dan Tanggap Darurat PLB3","desc":"Checklist inspeksi untuk memastikan kesiapsiagaan organisasi, fasilitas, prosedur, pelatihan, dan peralatan dalam menghadapi keadaan darurat PLB3.","count":21,"reload":"loadPLB3Darurat","symbol":"plb3darurat"},
+  "b3":{"title":"Pengelolaan B3 dan PCBs","desc":"Checklist inspeksi untuk memastikan pengelolaan B3 dan PCBs memenuhi ketentuan teknis pada ruang lingkup pemeriksaan.","count":30,"reload":"loadB3","symbol":"b3"},
+  "plnonb3":{"title":"Pengelolaan Limbah Non-B3","desc":"Checklist inspeksi untuk memastikan fasilitas penyimpanan dan pengelolaan Limbah Non-B3 memenuhi ketentuan master dan kondisi lapangan.","count":20,"reload":"loadPLNonB3","symbol":"plnonb3"},
+  "sampah":{"title":"Pengelolaan Sampah","desc":"Checklist inspeksi untuk memastikan pengurangan, pemilahan, penanganan, dan pengelolaan sampah dilakukan sesuai ketentuan yang telah ditetapkan.","count":9,"reload":"loadSampah","symbol":"sampah"}
+};
+function esc(v){return String(v??'').replace(/[&<>"']/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];});}
+function injectPage(id){
+  const page=document.getElementById(id); if(!page||page.dataset.aspectModernReady==='1')return;
+  const c=ASPECT_CONFIG[id]; if(!c)return;
+  page.classList.add('aspect-modern'); page.dataset.aspectModernReady='1'; page.dataset.aspect=id;
+  const first=page.firstElementChild;
+  const hero=document.createElement('section'); hero.className='aspect-hero';
+  const symbol=ASPECT_SYMBOLS[c.symbol]||ASPECT_SYMBOLS[id]||'';
+  hero.innerHTML='<div class="aspect-hero-mark symbol-'+esc(c.symbol)+'">'+symbol+'</div>'+    '<div class="aspect-hero-copy"><div class="aspect-kicker">ASPEK PENILAIAN</div><h1>'+esc(c.title)+'</h1><p>'+esc(c.desc)+'</p></div>'+    '<div class="aspect-hero-bg" aria-hidden="true"></div>'+    '<div class="aspect-hero-action"><button class="btn secondary" type="button" data-aspect-refresh="'+id+'">↻ Perbarui Data</button></div>';
+  page.insertBefore(hero,first);
+  const kpi=document.createElement('section'); kpi.className='aspect-kpi-row';
+  kpi.innerHTML='<div class="aspect-kpi"><small>Total Ketentuan</small><strong data-ak="total">'+c.count+'</strong><span>ketentuan master</span></div>'+    '<div class="aspect-kpi good"><small>Terpenuhi (Ya)</small><strong data-ak="yes">0</strong><span data-ak-pct="yes">0%</span></div>'+    '<div class="aspect-kpi bad"><small>Tidak Terpenuhi</small><strong data-ak="no">0</strong><span data-ak-pct="no">0%</span></div>'+    '<div class="aspect-kpi blue"><small>Belum Dinilai</small><strong data-ak="blank">'+c.count+'</strong><span data-ak-pct="blank">100%</span></div>'+    '<div class="aspect-kpi gold"><small>Skor Kepatuhan</small><strong data-ak="score">0%</strong><span>YA ÷ '+c.count+' ketentuan</span></div>';
+  page.insertBefore(kpi,first);
+  const cards=[...page.children].filter(x=>x.classList.contains('card'));
+  if(cards[0])cards[0].classList.add('aspect-form-meta');
+  const history=cards.find(x=>/Riwayat|History/i.test(x.textContent||'')); if(history)history.classList.add('aspect-history-modern');
+  const btn=hero.querySelector('[data-aspect-refresh]'); btn.onclick=function(){const fn=window[c.reload];if(typeof fn==='function'){try{fn();}catch(e){console.warn(e);}}};
+}
   function updateKpis(id){
     const page=document.getElementById(id),c=ASPECT_CONFIG[id]; if(!page||!c)return;
     const selects=[...page.querySelectorAll('.status-select')]; const total=c.count;
@@ -8865,7 +8911,6 @@ const ASPECT_IMAGES={"ppa":"https://upload.wikimedia.org/wikipedia/commons/b/bc/
 
 <script id="proper-corporate-premium-v3-js">
 (function(){
-  const PLNONB3_BG="https://images.unsplash.com/photo-1775673301865-11860d27573c?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=82&w=1800";
   const aspectInfo={
     ppa:{label:'Pengendalian Pencemaran Air',accent:'#11866a',total:12},
     emisi:{label:'Pengendalian Pencemaran Udara',accent:'#2f70c9',total:6},
@@ -8914,13 +8959,6 @@ const ASPECT_IMAGES={"ppa":"https://upload.wikimedia.org/wikipedia/commons/b/bc/
     }
   }
   function improveHeroes(){
-    const p=page('plnonb3');
-    if(p){
-      const bg=p.querySelector('.aspect-hero-bg img');
-      if(bg)bg.src=PLNONB3_BG;
-      const mark=p.querySelector('.aspect-hero-mark img');
-      if(mark)mark.style.objectFit='contain';
-    }
     Object.entries(aspectInfo).forEach(([id,info])=>{
       const p=page(id); if(!p)return;
       p.style.setProperty('--aspect-accent',info.accent);
