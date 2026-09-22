@@ -1495,6 +1495,42 @@ body{background:#f3f6f4!important}
 .aspect-hero-mark.image-fallback{background:linear-gradient(135deg,#e9f5ef,#d9ece4)}
 .aspect-hero-bg{background:#e5f0eb}
 </style>
+
+<style id="proper-dashboard-visual-v4">
+/* PROPER V4: clean symbol-only aspect navigation + visual launch cards */
+.aspect-symbol-card{grid-template-columns:40px minmax(0,1fr)!important;min-height:52px!important;padding:6px!important;gap:9px!important;border-radius:10px!important;background:rgba(255,255,255,.025)!important}
+.aspect-symbol{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;color:#fff;flex:0 0 auto;position:relative;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 5px 12px rgba(0,0,0,.14);transition:transform .2s ease,box-shadow .2s ease}
+.aspect-symbol:after{content:"";position:absolute;inset:-45%;background:linear-gradient(120deg,transparent 35%,rgba(255,255,255,.22) 50%,transparent 65%);transform:translateX(-65%);animation:symbolSheen 4.8s ease-in-out infinite}
+.aspect-symbol svg{width:21px;height:21px;position:relative;z-index:2}
+.symbol-ppa{background:linear-gradient(145deg,#159a70,#087052)}.symbol-emisi{background:linear-gradient(145deg,#3479df,#235bb0)}.symbol-plb3{background:linear-gradient(145deg,#159ab5,#11778d)}.symbol-darurat{background:linear-gradient(145deg,#ee8b2b,#c75d0d)}.symbol-plnonb3{background:linear-gradient(145deg,#54b991,#18815f)}.symbol-b3{background:linear-gradient(145deg,#8d70d9,#6241ae)}.symbol-sampah{background:linear-gradient(145deg,#d19a18,#a66f04)}
+.aspect-symbol-card:hover .aspect-symbol{transform:translateY(-1px) scale(1.04);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),0 8px 16px rgba(0,0,0,.18)}
+.aspect-nav-copy b{letter-spacing:.01em}.aspect-nav-copy small{font-size:8px!important}
+
+.portal-module.aspect-launch-card{min-height:176px!important;padding:88px 42px 15px 16px!important;overflow:hidden!important;border:1px solid rgba(10,45,33,.10)!important;border-top:0!important;background:#fff!important;isolation:isolate;position:relative;transform:translateZ(0);box-shadow:0 5px 16px rgba(6,35,26,.065)!important;transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease,border-color .28s ease!important}
+.portal-module.aspect-launch-card:before{content:""!important;position:absolute!important;left:0!important;right:0!important;top:0!important;width:auto!important;height:84px!important;margin:0!important;border-radius:0!important;border:0!important;background-image:linear-gradient(180deg,rgba(4,32,25,.03),rgba(4,32,25,.60)),var(--aspect-img)!important;background-size:cover!important;background-position:center!important;z-index:-2!important;transform:scale(1.02);transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .4s ease!important}
+.portal-module.aspect-launch-card:after{content:"";position:absolute;left:0;right:0;top:0;height:84px;z-index:-1;background:linear-gradient(110deg,var(--aspect-wash),transparent 72%);pointer-events:none}
+.portal-module.aspect-launch-card strong,.portal-module.aspect-launch-card span{position:relative;z-index:2}
+.portal-module.aspect-launch-card strong{font-size:14px!important;font-weight:800!important;color:#10251e!important;line-height:1.2!important}
+.portal-module.aspect-launch-card span{margin-top:4px;font-size:9.5px!important;line-height:1.35!important;color:#66786f!important}
+.portal-module.aspect-launch-card i{width:30px!important;height:30px!important;border-radius:10px!important;display:grid!important;place-items:center!important;right:12px!important;top:auto!important;bottom:12px!important;transform:none!important;background:#f0f4f2!important;color:var(--m)!important;box-shadow:0 4px 12px rgba(6,35,26,.08);font-size:15px!important;z-index:3}
+.portal-module.aspect-launch-card:hover{transform:translateY(-5px)!important;box-shadow:0 18px 34px rgba(6,35,26,.12),0 0 0 1px var(--m)!important}
+.portal-module.aspect-launch-card:hover:before{transform:scale(1.08);filter:saturate(1.08)}
+.portal-module.aspect-launch-card:hover i{background:var(--m)!important;color:#fff!important;transform:translateX(2px)!important}
+.portal-module.aspect-launch-card[data-aspect="ppa"]{--aspect-img:url("https://images.unsplash.com/photo-1538300342682-cf57afb97285?auto=format&fit=crop&w=1200&q=85");--aspect-wash:rgba(10,126,88,.24)}
+.portal-module.aspect-launch-card[data-aspect="emisi"]{--aspect-img:url("https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=1200&q=85");--aspect-wash:rgba(45,103,209,.22)}
+.portal-module.aspect-launch-card[data-aspect="plb3"]{--aspect-img:url("https://images.unsplash.com/photo-1577720643272-265f09367456?auto=format&fit=crop&w=1200&q=85");--aspect-wash:rgba(0,130,164,.22)}
+.portal-module.aspect-launch-card[data-aspect="plb3darurat"]{--aspect-img:url("https://images.unsplash.com/photo-1548266652-99cf277c83b5?auto=format&fit=crop&w=1200&q=85");--aspect-wash:rgba(222,112,24,.22)}
+.portal-module.aspect-launch-card[data-aspect="plnonb3"]{--aspect-img:url("https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=85");--aspect-wash:rgba(35,150,100,.22)}
+.portal-module.aspect-launch-card[data-aspect="b3"]{--aspect-img:url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=85");--aspect-wash:rgba(104,76,181,.22)}
+.portal-module.aspect-launch-card[data-aspect="sampah"]{--aspect-img:url("https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=85");--aspect-wash:rgba(191,141,18,.22)}
+.portal-section-title + .portal-module-grid .aspect-launch-card{animation:cardFloat 8s ease-in-out infinite}
+.portal-section-title + .portal-module-grid .aspect-launch-card:nth-child(2){animation-delay:.25s}.portal-section-title + .portal-module-grid .aspect-launch-card:nth-child(3){animation-delay:.5s}.portal-section-title + .portal-module-grid .aspect-launch-card:nth-child(4){animation-delay:.75s}.portal-section-title + .portal-module-grid .aspect-launch-card:nth-child(5){animation-delay:1s}.portal-section-title + .portal-module-grid .aspect-launch-card:nth-child(6){animation-delay:1.25s}.portal-section-title + .portal-module-grid .aspect-launch-card:nth-child(7){animation-delay:1.5s}
+@keyframes cardFloat{0%,100%{translate:0 0}50%{translate:0 -2px}}
+@keyframes symbolSheen{0%,58%{transform:translateX(-70%)}76%,100%{transform:translateX(70%)}}
+@media(max-width:900px){.portal-module.aspect-launch-card{min-height:165px!important;padding-top:82px!important}}
+@media(max-width:620px){.portal-module.aspect-launch-card{min-height:155px!important;padding-top:78px!important}}
+@media(prefers-reduced-motion:reduce){.aspect-symbol:after,.portal-module.aspect-launch-card{animation:none!important}.portal-module.aspect-launch-card:hover{transform:none!important}}
+</style>
 </head>
 <body>
 <datalist id="ppaLocationSuggestions"></datalist>
@@ -1591,13 +1627,13 @@ body{background:#f3f6f4!important}
   </nav>
   <div class="nav-label">Aspek Penilaian</div>
   <nav class="nav">
-    <button class="aspect-nav-card" data-page="ppa" data-aspect="ppa" onclick="showPage('ppa')"><span class="aspect-nav-thumb"><img src="https://www.datocms-assets.com/62973/1724312721-istock-2064133935_website_tcs_1800x1200.jpg?fit=crop&h=900" alt="PPA"></span><span class="aspect-nav-copy"><b>PPA</b><small>Pengendalian<br> Pencemaran Air</small></span></button>
-    <button class="aspect-nav-card" data-page="emisi" data-aspect="emisi" onclick="showPage('emisi')"><span class="aspect-nav-thumb"><img src="https://www.ee.columbia.edu/sites/www.ee.columbia.edu/files/styles/cu_crop/public/content/pics/news/pexels-pixabay-247763.jpg?itok=Z_uHx0lc" alt="PPU (Emisi)"></span><span class="aspect-nav-copy"><b>PPU (Emisi)</b><small>Pengendalian<br> Pencemaran Udara</small></span></button>
-    <button class="aspect-nav-card" data-page="plb3" data-aspect="plb3" onclick="showPage('plb3')"><span class="aspect-nav-thumb"><img src="https://bundlewaste.com.au/assets/hazardous-chemical-alt.webp" alt="PLB3"></span><span class="aspect-nav-copy"><b>PLB3</b><small>Pengelolaan<br> Limbah B3</small></span></button>
-    <button class="aspect-nav-card" data-page="plb3darurat" data-aspect="plb3darurat" onclick="showPage('plb3darurat')"><span class="aspect-nav-thumb"><img src="https://www.aramco.com/-/jssmedia/images/careers/saudi-applicants/apne-firfighter.jpg?cx=0.31&cy=0.36" alt="PLB3 Tanggap Darurat"></span><span class="aspect-nav-copy"><b>PLB3 Tanggap Darurat</b><small>Kesiapsiagaan &<br> Tanggap Darurat</small></span></button>
-    <button class="aspect-nav-card" data-page="plnonb3" data-aspect="plnonb3" onclick="showPage('plnonb3')"><span class="aspect-nav-thumb"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/RecyclingSymbolGreen.png" alt="PLnonB3"></span><span class="aspect-nav-copy"><b>PLnonB3</b><small>Pengelolaan<br> Limbah Non-B3</small></span></button>
-    <button class="aspect-nav-card" data-page="b3" data-aspect="b3" onclick="showPage('b3')"><span class="aspect-nav-thumb"><img src="https://cdn.shopify.com/s/files/1/0964/0048/files/blog-1770026791275-9d8b5l-blog-1769747357181-image_-0tRO59XW.jpg?v=1770026792" alt="B3 &amp; PCBs"></span><span class="aspect-nav-copy"><b>B3 & PCBs</b><small>Bahan Berbahaya<br> dan Beracun</small></span></button>
-    <button class="aspect-nav-card" data-page="sampah" data-aspect="sampah" onclick="showPage('sampah')"><span class="aspect-nav-thumb"><img src="https://www.gov.wales/sites/default/files/styles/600x400/public/announcements/2024-04/workplace-recycling-regulations.jpg?itok=Vf_qYGQu" alt="Sampah"></span><span class="aspect-nav-copy"><b>Sampah</b><small>Pengelolaan<br> Sampah</small></span></button>
+    <button class="aspect-nav-card aspect-symbol-card" data-page="ppa" data-aspect="ppa" onclick="showPage('ppa')"><span class="aspect-symbol symbol-ppa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3s6 6.3 6 10.3A6 6 0 0 1 6 13.3C6 9.3 12 3 12 3Z"/><path d="M9 14.5c1.5 1.2 3.5 1.4 5.2.6"/></svg></span><span class="aspect-nav-copy"><b>PPA</b><small>Pengendalian<br>Pencemaran Air</small></span></button>
+    <button class="aspect-nav-card aspect-symbol-card" data-page="emisi" data-aspect="emisi" onclick="showPage('emisi')"><span class="aspect-symbol symbol-emisi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M6 19v-7h4v7M14 19V7h4v12"/><path d="M8 5c.8-1.2 2.2-1.2 3 0M15 3c.8-1.2 2.2-1.2 3 0"/></svg></span><span class="aspect-nav-copy"><b>PPU (Emisi)</b><small>Pengendalian<br>Pencemaran Udara</small></span></button>
+    <button class="aspect-nav-card aspect-symbol-card" data-page="plb3" data-aspect="plb3" onclick="showPage('plb3')"><span class="aspect-symbol symbol-plb3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 7h14M7 4h10v16H7z"/><path d="M9 10h6M9 14h6M9 18h3"/><path d="M4 7h16"/></svg></span><span class="aspect-nav-copy"><b>PLB3</b><small>Pengelolaan<br>Limbah B3</small></span></button>
+    <button class="aspect-nav-card aspect-symbol-card" data-page="plb3darurat" data-aspect="plb3darurat" onclick="showPage('plb3darurat')"><span class="aspect-symbol symbol-darurat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 21 20H3L12 3Z"/><path d="M12 9v5M12 17h.01"/></svg></span><span class="aspect-nav-copy"><b>PLB3 Tanggap Darurat</b><small>Kesiapsiagaan &amp;<br>Tanggap Darurat</small></span></button>
+    <button class="aspect-nav-card aspect-symbol-card" data-page="plnonb3" data-aspect="plnonb3" onclick="showPage('plnonb3')"><span class="aspect-symbol symbol-plnonb3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 5-2 3 2 3M15 19l2-3-2-3M6 11l3 1 3-2M18 13l-3-1-3 2"/><path d="M9 8h6l3 5-3 5H9l-3-5 3-5Z"/></svg></span><span class="aspect-nav-copy"><b>PLnonB3</b><small>Pengelolaan<br>Limbah Non-B3</small></span></button>
+    <button class="aspect-nav-card aspect-symbol-card" data-page="b3" data-aspect="b3" onclick="showPage('b3')"><span class="aspect-symbol symbol-b3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v5.2L5.5 16a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8.2V3"/><path d="M7.5 14h9"/></svg></span><span class="aspect-nav-copy"><b>B3 &amp; PCBs</b><small>Bahan Berbahaya<br>dan Beracun</small></span></button>
+    <button class="aspect-nav-card aspect-symbol-card" data-page="sampah" data-aspect="sampah" onclick="showPage('sampah')"><span class="aspect-symbol symbol-sampah"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/><path d="M10 10v7M14 10v7"/></svg></span><span class="aspect-nav-copy"><b>Sampah</b><small>Pengelolaan<br>Sampah</small></span></button>
   </nav>
   <div class="nav-label">Monitoring &amp; Tim</div>
   <nav class="nav">
@@ -1636,23 +1672,23 @@ body{background:#f3f6f4!important}
   </div>
 
   <div class="portal-module-grid">
-    <button class="portal-module portal-green" onclick="showPage('ppa')">
+    <button class="portal-module aspect-launch-card portal-green" data-aspect="ppa" onclick="showPage('ppa')">
       <strong>ASPEK PPA</strong><span>PENGENDALIAN PENCEMARAN AIR</span><i>→</i>
     </button>
-    <button class="portal-module portal-blue" onclick="showPage('emisi')">
+    <button class="portal-module aspect-launch-card portal-blue" data-aspect="emisi" onclick="showPage('emisi')">
       <strong>ASPEK PPU</strong><span>PENGENDALIAN PENCEMARAN UDARA &amp; EMISI</span><i>→</i>
     </button>
-    <button class="portal-module portal-cyan" onclick="showPage('plb3')">
+    <button class="portal-module aspect-launch-card portal-cyan" data-aspect="plb3" onclick="showPage('plb3')">
       <strong>ASPEK PENYIMPANAN PLB3</strong><span>PENGELOLAAN PENYIMPANAN LIMBAH B3</span><i>→</i>
     </button>
-    <button class="portal-module portal-orange" onclick="showPage('plb3darurat')">
+    <button class="portal-module aspect-launch-card portal-orange" data-aspect="plb3darurat" onclick="showPage('plb3darurat')">
       <strong>ASPEK SISTEM TANGGAP DARURAT PLB3</strong><span>PROGRAM &amp; KESIAPSIAGAAN DARURAT</span><i>→</i>
     </button>
-    <button class="portal-module portal-navy" onclick="showPage('plnonb3')"><strong>ASPEK PLnonB3</strong><span>PENGELOLAAN LIMBAH NON-B3</span><i>→</i></button>
-    <button class="portal-module portal-yellow" onclick="showPage('b3')">
+    <button class="portal-module aspect-launch-card portal-navy" data-aspect="plnonb3" onclick="showPage('plnonb3')"><strong>ASPEK PLnonB3</strong><span>PENGELOLAAN LIMBAH NON-B3</span><i>→</i></button>
+    <button class="portal-module aspect-launch-card portal-yellow" data-aspect="b3" onclick="showPage('b3')">
       <strong>ASPEK B3</strong><span>PENGELOLAAN B3 &amp; PCBs</span><i>→</i>
     </button>
-    <button class="portal-module portal-amber" onclick="showPage('sampah')">
+    <button class="portal-module aspect-launch-card portal-amber" data-aspect="sampah" onclick="showPage('sampah')">
       <strong>ASPEK SAMPAH</strong><span>PENGELOLAAN, PEMILAHAN &amp; PELAPORAN SAMPAH</span><i>→</i>
     </button>
     <button class="portal-module portal-navy" onclick="showPage('monitoring')">
